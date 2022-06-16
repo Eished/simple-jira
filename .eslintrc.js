@@ -1,7 +1,14 @@
 module.exports = {
   parser: '@typescript-eslint/parser', // 定义ESLint的解析器
-  extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:@typescript-eslint/recommended', 'prettier'], //定义文件继承的子规范
-  plugins: ['@typescript-eslint', 'react-hooks', 'eslint-plugin-react', 'html', 'react', 'prettier'], //定义了该eslint文件所依赖的插件
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
+    'react-app',
+    'react-app/jest',
+  ], //定义文件继承的子规范
+  plugins: ['react-hooks', 'eslint-plugin-react', 'react', 'prettier'], //定义了该eslint文件所依赖的插件
   env: {
     //指定代码的运行环境
     browser: true,
@@ -25,19 +32,20 @@ module.exports = {
   },
   rules: {
     // 自定义的一些规则
-    'prettier/prettier': 'error',
-    'linebreak-style': ['error', 'unix'],
-    'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn',
-    'react/jsx-uses-react': 'error',
-    'react/jsx-uses-vars': 'error',
-    'react/react-in-jsx-scope': 'error',
+    'prettier/prettier': 1,
+    'linebreak-style': [2, 'unix'],
+    'react-hooks/rules-of-hooks': 2,
+    'react-hooks/exhaustive-deps': 1,
+    'react/jsx-uses-react': 1,
+    'react/jsx-uses-vars': 1,
+    'react/react-in-jsx-scope': 0,
     'valid-typeof': [
-      'warn',
+      1,
       {
         requireStringLiterals: false,
       },
     ],
-    '@typescript-eslint/no-var-requires': 'off',
+    sime: 0,
+    ' @typescript-eslint/no-var-requires': 0,
   },
-};
+}
