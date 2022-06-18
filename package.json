@@ -11,7 +11,8 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "prepare": "husky install",
-    "server": "json-server --watch ./__json_server_mock__/db.json --port 3003"
+    "server": "json-server --watch ./__json_server_mock__/db.json --port 3003",
+    "seed": "ts-node ./__json_server_mock__/seed.ts "
   },
   "browserslist": {
     "production": [
@@ -143,6 +144,7 @@
     "style-loader": "^3.3.1",
     "tailwindcss": "^3.0.2",
     "terser-webpack-plugin": "^5.2.5",
+    "ts-node": "^10.8.1",
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0",
     "webpack": "^5.64.4",
