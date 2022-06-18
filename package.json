@@ -10,7 +10,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "server": "json-server --watch ./__json_server_mock__/db.json --port 3003"
   },
   "browserslist": {
     "production": [
@@ -121,6 +122,7 @@
     "jest": "^27.4.3",
     "jest-resolve": "^27.4.2",
     "jest-watch-typeahead": "^1.0.0",
+    "json-server": "^0.17.0",
     "lint-staged": ">=10",
     "mini-css-extract-plugin": "^2.4.5",
     "postcss": "^8.4.4",
