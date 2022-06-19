@@ -1,21 +1,36 @@
+import { faker } from '@faker-js/faker'
 import fs from 'fs'
 import path from 'path'
-
-type User = {
-  id: number
-  name: string
-}
+import { User } from '../src/type/User'
 
 type DBJson = {
   user: User[]
 }
 
+export function createRandomUser(): User {
+  const user: User = {
+    id: faker.datatype.uuid(),
+    username: '',
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    gender: faker.name.gender(),
+    email: '',
+    avatar: faker.image.avatar(),
+    password: faker.internet.password(),
+    birthdate: faker.date.birthdate(),
+    registeredAt: faker.date.past(),
+  }
+  user.username = user.firstName + '.' + user.lastName
+  user.email = user.username + '@simplejira.com'
+  return user
+}
+
 const generateUser = () => {
   const users: User[] = []
-  // Create 1000 users
-  for (let i = 0; i < 10; i++) {
-    users.push({ id: i + 1, name: `user${i + 1}` })
-  }
+  // Create 10 users
+  Array.from({ length: 10 }).forEach(() => {
+    users.push(createRandomUser())
+  })
   return users
 }
 

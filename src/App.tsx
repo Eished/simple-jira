@@ -1,23 +1,31 @@
+import { getUserById } from 'api/user'
 import 'App.css'
-import logo from 'logo.svg'
+import React, { useEffect, useState } from 'react'
 import { ReactComponent as ReactLogo } from './logo.svg'
 
-function App() {
+const App: React.FC = () => {
+  console.log('App render...')
+
+  const [count1, setCount1] = useState(0)
+  const [count2, setCount2] = useState(0)
+
+  useEffect(() => {
+    getUserById('7b0ce6b5-1e69-4e06-98ce-2839b64cd374').then((data) => {
+      console.log(data)
+    })
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <ReactLogo width="100" height="100" fill="yellow" className="App-logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
+      <ReactLogo width="100" height="100" fill="blue" className="App-logo" />
+      <div
+        onClick={async () => {
+          setCount1((count) => count + 1)
+          setCount2((count) => count + 1)
+        }}>
+        <div>count1： {count1}</div>
+        <div>count2： {count2}</div>
+      </div>
     </div>
   )
 }

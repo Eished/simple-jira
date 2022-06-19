@@ -2,15 +2,15 @@
 
 ## Available Scripts
 
-In the project directory, you can run:
+### `yarn start & yarn server`
 
-### `yarn start`
+// See https://go.microsoft.com/fwlink/?LinkId=733558 for the documentation about the tasks.json format
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Use VScode Task `Ctrl + shift + b` choose `start & server`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Frontend: http://localhost:3000
+
+Mock Backend end: http://localhost:3003
 
 ### `yarn test`
 
@@ -19,8 +19,17 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Builds the app for production to the `build` folder.
+
+### `yarn server`
+
+json-server
+
+https://github.com/typicode/json-server#getting-started
+
+### `yarn seed`
+
+Seeding `./__json_server_mock__/db.json`
 
 ## Commit Message
 
@@ -46,7 +55,3 @@ https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/con
 echo "foo: some message" # fails
 echo "fix: some message" # passes
 ```
-
-## json-server
-
-https://github.com/typicode/json-server#getting-started

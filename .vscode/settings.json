@@ -56,5 +56,17 @@
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  // vue backup
+  "vetur.format.defaultFormatterOptions": {
+    "prettier": {
+      "semi": true,
+      "printWidth": 120,
+      "singleQuote": false,
+      "trailingComma": "aways",
+      "arrowParens": "aways"
+    }
+  },
+  "vetur.format.defaultFormatter.js": "prettier-eslint",
+  "vetur.format.defaultFormatter.html": "js-beautify-html"
 }
