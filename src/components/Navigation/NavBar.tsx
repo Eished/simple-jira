@@ -10,7 +10,7 @@ export const NavBar: React.FC = () => {
     <div className="w-4/5">
       <Navbar>
         <React.Fragment key=".0">
-          <Navbar.Brand href="https://flowbite.com/">
+          <Navbar.Brand href="/">
             <Logo />
           </Navbar.Brand>
           <NavUserBar />
