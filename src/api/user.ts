@@ -1,13 +1,17 @@
-import axios from 'axios'
+import { APIClient, setAuthorization } from 'api'
 import { User } from 'type/User'
 
-const URL = process.env.REACT_APP_API
-if (!URL) throw new Error('API URL NOT FOUND')
+const USER_PATH = 'user/'
+const API = new APIClient()
 
-const retrunData = (response: { data: any }) => {
-  return response.data
+class UserApi {
+  constructor() {
+    const token = localStorage.getItem('token')
+    if (token) setAuthorization(token)
+  }
+  getUserById(uuid: string): Promise<User> {
+    return API.get(USER_PATH + uuid)
+  }
 }
 
-export const getUserById = (uuid: string): Promise<User> => {
-  return axios.get(URL + '/user/' + uuid).then(retrunData)
-}
+export default new UserApi()
