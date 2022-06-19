@@ -7,9 +7,9 @@ type DBJson = {
   user: User[]
 }
 
-export function createRandomUser(): User {
+export function createRandomUser(id: number): User {
   const user: User = {
-    id: faker.datatype.uuid(),
+    id: id + 1,
     username: '',
     firstName: faker.name.firstName(),
     lastName: faker.name.lastName(),
@@ -28,8 +28,8 @@ export function createRandomUser(): User {
 const generateUser = () => {
   const users: User[] = []
   // Create 10 users
-  Array.from({ length: 10 }).forEach(() => {
-    users.push(createRandomUser())
+  Array.from({ length: 10 }).forEach((item, index) => {
+    users.push(createRandomUser(index))
   })
   return users
 }

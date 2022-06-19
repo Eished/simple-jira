@@ -1,5 +1,7 @@
 import React from 'react'
 
 export const Home: React.FC = () => {
-  return <div>home</div>
+  console.log('Home render...')
+
+  return <div>Home</div>
 }

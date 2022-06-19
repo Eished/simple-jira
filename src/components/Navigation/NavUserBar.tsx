@@ -1,0 +1,29 @@
+import userApi from 'api/user'
+import { Avatar, Dropdown, Navbar } from 'flowbite-react'
+import React, { useEffect, useState } from 'react'
+import { User } from 'type/User'
+
+export const NavUserBar: React.FC = () => {
+  const [user, setUser] = useState<User | undefined>(undefined)
+
+  useEffect(() => {
+    userApi.getUserById(1).then(setUser)
+  }, [])
+
+  return (
+    <div className="flex md:order-2">
+      <Dropdown inline label={<Avatar alt="User settings" img={user?.avatar} rounded />}>
+        <Dropdown.Header>
+          <span className="block text-sm">{user?.firstName + ' ' + user?.lastName}</span>
+          <span className="block truncate text-xs mt-2 font-medium text-gray-500">{user?.email}</span>
+        </Dropdown.Header>
+        <Dropdown.Item>Dashboard</Dropdown.Item>
+        <Dropdown.Item>Settings</Dropdown.Item>
+        <Dropdown.Item>Earnings</Dropdown.Item>
+        <Dropdown.Divider />
+        <Dropdown.Item>Sign out</Dropdown.Item>
+      </Dropdown>
+      <Navbar.Toggle />
+    </div>
+  )
+}

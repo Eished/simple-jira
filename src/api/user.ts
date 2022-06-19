@@ -9,8 +9,8 @@ class UserApi {
     const token = localStorage.getItem('token')
     if (token) setAuthorization(token)
   }
-  getUserById(uuid: string): Promise<User> {
-    return API.get(USER_PATH + uuid)
+  getUserById(id: number): Promise<User> {
+    return API.get(USER_PATH + id)
   }
 }
 

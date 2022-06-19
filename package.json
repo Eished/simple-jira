@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "axios": "^0.27.2",
+    "flowbite": "^1.4.7",
+    "flowbite-react": "^0.0.26",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0"
@@ -157,6 +159,6 @@
     "workbox-webpack-plugin": "^6.4.1"
   },
   "lint-staged": {
-    "*.{js,ts.tsx,jsx}": "eslint --cache --fix"
+    "*.{js,ts.tsx,jsx}": "eslint --fix"
   }
 }

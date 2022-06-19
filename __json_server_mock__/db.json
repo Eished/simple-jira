@@ -1,1 +1,124 @@
-{"user":[{"id":"7b0ce6b5-1e69-4e06-98ce-2839b64cd374","username":"Alan.Ortiz","firstName":"Alan","lastName":"Ortiz","gender":"Male to Female","email":"Alan.Ortiz@simplejira.com","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/273.jpg","password":"3A72_j_QwLYFzSU","birthdate":"1959-10-31T00:56:31.172Z","registeredAt":"2021-10-21T16:48:33.972Z"},{"id":"be605de0-b0f4-4737-aaa1-8384a718b524","username":"Precious.Flatley","firstName":"Precious","lastName":"Flatley","gender":"Cis","email":"Precious.Flatley@simplejira.com","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1081.jpg","password":"uRNQWT5k5H5fL4r","birthdate":"1963-04-28T08:07:13.470Z","registeredAt":"2022-02-03T12:17:48.754Z"},{"id":"a58049b9-168d-4d0f-b899-51ae88048833","username":"Misael.Heaney","firstName":"Misael","lastName":"Heaney","gender":"Transexual Man","email":"Misael.Heaney@simplejira.com","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/648.jpg","password":"NKieB2H0qqaufx4","birthdate":"2003-09-04T07:50:01.050Z","registeredAt":"2021-08-07T00:06:00.727Z"},{"id":"451c46ef-3c25-4317-b3cb-2c5c5e756eb3","username":"Selmer.Pfeffer","firstName":"Selmer","lastName":"Pfeffer","gender":"Other","email":"Selmer.Pfeffer@simplejira.com","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/648.jpg","password":"ddGLGqWGOPEWaGI","birthdate":"1953-10-14T08:36:57.618Z","registeredAt":"2022-06-13T15:10:25.227Z"},{"id":"6705eeb4-b630-4852-b5b2-775950dd2a15","username":"Buddy.Lubowitz","firstName":"Buddy","lastName":"Lubowitz","gender":"Transexual","email":"Buddy.Lubowitz@simplejira.com","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/357.jpg","password":"JS81QxFljOfMLC9","birthdate":"1996-06-08T10:58:56.654Z","registeredAt":"2021-08-02T03:03:19.815Z"},{"id":"f879388f-6089-4316-912a-cbdbd56e2c4b","username":"Ruthie.Fadel","firstName":"Ruthie","lastName":"Fadel","gender":"Female to male transgender man","email":"Ruthie.Fadel@simplejira.com","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/656.jpg","password":"YcoGhZymjQDaABt","birthdate":"1946-05-17T00:45:58.047Z","registeredAt":"2021-07-05T12:05:15.445Z"},{"id":"cf82317c-1e20-45e0-9882-5fa10991bb22","username":"Kameron.Pfeffer","firstName":"Kameron","lastName":"Pfeffer","gender":"Male to Female","email":"Kameron.Pfeffer@simplejira.com","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/221.jpg","password":"NKCv2kRr6ZevwdQ","birthdate":"1999-04-30T05:16:24.861Z","registeredAt":"2021-09-24T06:54:56.957Z"},{"id":"7a5960df-21f5-4041-accb-3ddfafb6188a","username":"Arvid.Carter","firstName":"Arvid","lastName":"Carter","gender":"Gender Questioning","email":"Arvid.Carter@simplejira.com","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/806.jpg","password":"7nny6K02tlNAGJJ","birthdate":"1981-07-25T07:02:45.712Z","registeredAt":"2021-09-19T05:10:35.060Z"},{"id":"6e27bd51-7b85-4377-a32c-ec0eb7524eac","username":"Tillman.Schowalter","firstName":"Tillman","lastName":"Schowalter","gender":"Transexual Female","email":"Tillman.Schowalter@simplejira.com","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1065.jpg","password":"404vqnliuRUP9_u","birthdate":"1961-08-05T22:43:07.539Z","registeredAt":"2022-04-09T22:43:45.766Z"},{"id":"ec4786e8-292e-411d-bfc9-0789fb4e8e62","username":"Lavinia.Schroeder","firstName":"Lavinia","lastName":"Schroeder","gender":"Two* person","email":"Lavinia.Schroeder@simplejira.com","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/786.jpg","password":"3fJy24Zg7KCYo3a","birthdate":"1990-07-08T18:25:36.545Z","registeredAt":"2021-12-12T15:45:43.979Z"}]}
+{
+  "user": [
+    {
+      "id": 1,
+      "username": "Bella.Pfannerstill",
+      "firstName": "Bella",
+      "lastName": "Pfannerstill",
+      "gender": "Neither",
+      "email": "Bella.Pfannerstill@simplejira.com",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1129.jpg",
+      "password": "DB6vkAzaITaWO_2",
+      "birthdate": "1952-10-19T21:11:59.384Z",
+      "registeredAt": "2021-12-03T17:22:15.122Z"
+    },
+    {
+      "id": 2,
+      "username": "Leanne.Goyette",
+      "firstName": "Leanne",
+      "lastName": "Goyette",
+      "gender": "Intersex",
+      "email": "Leanne.Goyette@simplejira.com",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1191.jpg",
+      "password": "or7g9MVyb8r2yeE",
+      "birthdate": "1954-11-29T18:38:48.961Z",
+      "registeredAt": "2021-10-28T04:53:44.949Z"
+    },
+    {
+      "id": 3,
+      "username": "Abbigail.Steuber",
+      "firstName": "Abbigail",
+      "lastName": "Steuber",
+      "gender": "Intersex woman",
+      "email": "Abbigail.Steuber@simplejira.com",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/731.jpg",
+      "password": "N3d_qz_TbC8h7UY",
+      "birthdate": "1967-12-17T20:07:29.772Z",
+      "registeredAt": "2021-07-04T19:42:50.887Z"
+    },
+    {
+      "id": 4,
+      "username": "Lenna.Leuschke",
+      "firstName": "Lenna",
+      "lastName": "Leuschke",
+      "gender": "Cisgender",
+      "email": "Lenna.Leuschke@simplejira.com",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/789.jpg",
+      "password": "IFYMD8ixZI4Eb0d",
+      "birthdate": "1975-05-03T22:13:12.131Z",
+      "registeredAt": "2021-12-22T06:08:11.440Z"
+    },
+    {
+      "id": 5,
+      "username": "Rodrick.Swaniawski",
+      "firstName": "Rodrick",
+      "lastName": "Swaniawski",
+      "gender": "Intersex person",
+      "email": "Rodrick.Swaniawski@simplejira.com",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/956.jpg",
+      "password": "58nHFAAUpvYOJV2",
+      "birthdate": "2004-10-01T01:33:13.491Z",
+      "registeredAt": "2022-01-26T19:57:22.225Z"
+    },
+    {
+      "id": 6,
+      "username": "Rita.Miller",
+      "firstName": "Rita",
+      "lastName": "Miller",
+      "gender": "Man",
+      "email": "Rita.Miller@simplejira.com",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/504.jpg",
+      "password": "pOWafnyLoiZEc6i",
+      "birthdate": "1982-06-19T05:11:33.269Z",
+      "registeredAt": "2022-02-22T09:44:07.881Z"
+    },
+    {
+      "id": 7,
+      "username": "Madyson.Stoltenberg",
+      "firstName": "Madyson",
+      "lastName": "Stoltenberg",
+      "gender": "Cisgender Man",
+      "email": "Madyson.Stoltenberg@simplejira.com",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/564.jpg",
+      "password": "VoQKj3KpUpZAdHz",
+      "birthdate": "1993-07-14T20:16:38.089Z",
+      "registeredAt": "2021-10-24T09:38:42.336Z"
+    },
+    {
+      "id": 8,
+      "username": "Mylene.Steuber",
+      "firstName": "Mylene",
+      "lastName": "Steuber",
+      "gender": "Other",
+      "email": "Mylene.Steuber@simplejira.com",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/904.jpg",
+      "password": "DlQUaqT192rNGL7",
+      "birthdate": "1968-09-03T11:16:43.799Z",
+      "registeredAt": "2021-07-12T21:45:23.183Z"
+    },
+    {
+      "id": 9,
+      "username": "Gustave.Pfannerstill",
+      "firstName": "Gustave",
+      "lastName": "Pfannerstill",
+      "gender": "Cis Female",
+      "email": "Gustave.Pfannerstill@simplejira.com",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/937.jpg",
+      "password": "DXx37NLcgnwsLdj",
+      "birthdate": "1948-04-12T08:36:44.328Z",
+      "registeredAt": "2022-06-15T06:02:03.134Z"
+    },
+    {
+      "id": 10,
+      "username": "Santina.Romaguera",
+      "firstName": "Santina",
+      "lastName": "Romaguera",
+      "gender": "Transgender Person",
+      "email": "Santina.Romaguera@simplejira.com",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1131.jpg",
+      "password": "qyUCoRSlxjSDHZE",
+      "birthdate": "1955-11-24T07:21:43.289Z",
+      "registeredAt": "2021-07-06T00:50:03.720Z"
+    }
+  ]
+}
