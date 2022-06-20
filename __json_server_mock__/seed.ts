@@ -4,7 +4,7 @@ import path from 'path'
 import { User } from '../src/type/User'
 
 type DBJson = {
-  user: User[]
+  users: User[]
 }
 
 export function createRandomUser(id: number): User {
@@ -16,7 +16,7 @@ export function createRandomUser(id: number): User {
     gender: faker.name.gender(),
     email: '',
     avatar: faker.image.avatar(),
-    password: faker.internet.password(),
+    password: '$2a$10$pEVcmfqCpY/A.dzP2WKxTOXyNNwNb.xkZMTisMeKnYQTOu12a5Fau', // nEiEQtUZ7DgL09m
     birthdate: faker.date.birthdate(),
     registeredAt: faker.date.past(),
   }
@@ -28,7 +28,7 @@ export function createRandomUser(id: number): User {
 const generateUser = () => {
   const users: User[] = []
   // Create 10 users
-  Array.from({ length: 10 }).forEach((item, index) => {
+  Array.from({ length: 25 }).forEach((item, index) => {
     users.push(createRandomUser(index))
   })
   return users
@@ -41,7 +41,7 @@ const writeData = (data: DBJson, name = 'db.json') => {
 const starter = () => {
   console.log('Start seed...')
 
-  const data = { user: generateUser() }
+  const data = { users: generateUser() }
   writeData(data)
 }
 

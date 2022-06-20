@@ -8,6 +8,14 @@ export const Projects: React.FC = () => {
     { name: 'mike', title: 'hello', total: 999, edit: 'Edit' },
     { name: 'mike', title: 'hello', total: 999, edit: 'Edit' },
     { name: 'mike', title: 'hello', total: 999, edit: 'Edit' },
+    { name: 'mike', title: 'hello', total: 999, edit: 'Edit' },
+    { name: 'mike', title: 'hello', total: 999, edit: 'Edit' },
+    { name: 'mike', title: 'hello', total: 999, edit: 'Edit' },
+    { name: 'mike', title: 'hello', total: 999, edit: 'Edit' },
+    { name: 'mike', title: 'hello', total: 999, edit: 'Edit' },
+    { name: 'mike', title: 'hello', total: 999, edit: 'Edit' },
+    { name: 'mike', title: 'hello', total: 999, edit: 'Edit' },
+    { name: 'mike', title: 'hello', total: 999, edit: 'Edit' },
   ]
   return (
     <div className="flex flex-col m-5 items-center space-y-6">

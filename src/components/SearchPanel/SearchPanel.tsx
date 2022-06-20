@@ -6,7 +6,7 @@ export const SearchPanel: React.FC = () => {
   return (
     <div className="flex items-center space-x-2">
       <div className="w-96">
-        <TextInput sizing="md" shadow />
+        <TextInput shadow type="text" sizing="md" />
       </div>
       <div className="w-32">
         <FlowSelect />

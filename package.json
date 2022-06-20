@@ -16,7 +16,7 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "prepare": "husky install",
-    "server": "json-server --watch ./__json_server_mock__/db.json --port 3003",
+    "server": "json-server --watch ./__json_server_mock__/db.json --port 3003 -m ./node_modules/json-server-auth",
     "seed": "ts-node ./__json_server_mock__/seed.ts "
   },
   "browserslist": {
@@ -79,6 +79,7 @@
     "jest-resolve": "^27.4.2",
     "jest-watch-typeahead": "^1.0.0",
     "json-server": "^0.17.0",
+    "json-server-auth": "^2.1.0",
     "lint-staged": ">=10",
     "mini-css-extract-plugin": "^2.4.5",
     "postcss": "^8.4.14",

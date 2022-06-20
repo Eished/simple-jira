@@ -31,7 +31,7 @@ axios.interceptors.response.use(
       default:
         message = error.message || error
     }
-    return Promise.reject(message)
+    return Promise.reject({ message, response: error.response.data })
   }
 )
 
@@ -44,30 +44,18 @@ const setAuthorization = (token: string) => {
 }
 
 class APIClient {
-  /**
-   * Fetches data from given url
-   */
   get = (url: string, params?: any): Promise<any> => {
     return axios.get(url, params)
   }
 
-  /**
-   * post given data to url
-   */
-  create = (url: string, data: any): Promise<any> => {
+  post = (url: string, data: any): Promise<any> => {
     return axios.post(url, data)
   }
 
-  /**
-   * Updates data
-   */
-  update = (url: string, data: any): Promise<any> => {
+  put = (url: string, data: any): Promise<any> => {
     return axios.put(url, data)
   }
 
-  /**
-   * Delete
-   */
   delete = (url: string): Promise<any> => {
     return axios.delete(url)
   }

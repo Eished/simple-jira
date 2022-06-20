@@ -26,7 +26,11 @@ export const ReactTableCard: React.FC<ReactTableCardProps> = ({
         Header: headerItem,
         accessor: headerItem,
         Cell: (props: any) => {
-          return <b>{props.value}</b>
+          return (
+            <span title={props.value}>
+              <b>{props.value}</b>
+            </span>
+          )
         },
       }
     } else if (headerItem === 'edit') {
@@ -45,6 +49,9 @@ export const ReactTableCard: React.FC<ReactTableCardProps> = ({
       return {
         Header: headerItem,
         accessor: headerItem,
+        Cell: (props: any) => {
+          return <span title={props.value}>{props.value}</span>
+        },
       }
     }
   }
@@ -131,7 +138,7 @@ export const ReactTableCard: React.FC<ReactTableCardProps> = ({
                 {row.cells.map((cell) => {
                   return (
                     <Table.Cell
-                      className="whitespace-nowrap font-medium text-gray-900 dark:text-white"
+                      className="whitespace-nowrap font-medium text-gray-900 dark:text-white max-w-[150px] overflow-hidden text-ellipsis"
                       {...cell.getCellProps()}>
                       {cell.render('Cell')}
                     </Table.Cell>
@@ -140,11 +147,11 @@ export const ReactTableCard: React.FC<ReactTableCardProps> = ({
               </Table.Row>
             )
           })}
-          {pageSize - page.length > 0 && <tr style={{ height: (pageSize - page.length) * 32 }}></tr>}
+          {/* {pageSize - page.length > 0 && <tr style={{ height: (pageSize - page.length) * 32 }}></tr>} */}
         </Table.Body>
       </Table>
 
-      <div className="pagination">
+      <div className="w-full flex items-center justify-center space-x-4 mt-8">
         <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
           {'<<'}
         </button>{' '}

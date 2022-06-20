@@ -1,4 +1,5 @@
-import userApi from 'api/user'
+import AuthApi from 'api/auth'
+import UserApi from 'api/user'
 import { Avatar, Button, Dropdown, Navbar } from 'flowbite-react'
 import React, { useEffect, useState } from 'react'
 import { User } from 'type/User'
@@ -7,8 +8,12 @@ export const NavUserBar: React.FC = () => {
   const [user, setUser] = useState<User | undefined>(undefined)
 
   useEffect(() => {
-    userApi.getUserById(1).then(setUser)
+    setUser(UserApi.getMe())
   }, [])
+
+  const logout = () => {
+    AuthApi.logout().then(() => window.location.reload())
+  }
 
   return user ? (
     <div className="flex md:order-2 z-50">
@@ -21,7 +26,7 @@ export const NavUserBar: React.FC = () => {
         <Dropdown.Item>Settings</Dropdown.Item>
         <Dropdown.Item>Earnings</Dropdown.Item>
         <Dropdown.Divider />
-        <Dropdown.Item>Sign out</Dropdown.Item>
+        <Dropdown.Item onClick={logout}>Sign out</Dropdown.Item>
       </Dropdown>
       <Navbar.Toggle />
     </div>
