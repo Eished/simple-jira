@@ -11,7 +11,7 @@ export const NavUserBar: React.FC = () => {
   }, [])
 
   return user ? (
-    <div className="flex md:order-2">
+    <div className="flex md:order-2 z-50">
       <Dropdown inline label={<Avatar alt="User settings" img={user.avatar} rounded />}>
         <Dropdown.Header>
           <span className="block text-sm">{user.firstName + ' ' + user.lastName}</span>
@@ -26,7 +26,7 @@ export const NavUserBar: React.FC = () => {
       <Navbar.Toggle />
     </div>
   ) : (
-    <div className="flex md:order-2">
+    <div className="flex md:order-2 z-50">
       <Button>Login</Button>
       <Navbar.Toggle />
     </div>
