@@ -45,6 +45,7 @@ class AuthApi {
   logout() {
     localStorage.removeItem('token')
     localStorage.removeItem('localUser')
+    window.location.href = window.location.origin
     return Promise.resolve()
   }
 }

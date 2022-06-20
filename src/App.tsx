@@ -1,3 +1,4 @@
+import UserApi from 'api/user'
 import { FlowFooter } from 'components/Footer/FlowFooter'
 import { FlowNavBar } from 'components/Navigation/FlowNavBar'
 import { NavRoutes } from 'components/Navigation/NavRoutes'
@@ -6,11 +7,11 @@ import { Login } from 'view/Login'
 
 const App: React.FC = () => {
   console.log('App render...')
-  const token = localStorage.getItem('token')
+  const user = UserApi.getMe()
 
   return (
     <div className="flex flex-col justify-center">
-      {token ? (
+      {user ? (
         <>
           <FlowNavBar />
           <NavRoutes />

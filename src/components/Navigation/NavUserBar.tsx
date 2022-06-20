@@ -12,7 +12,7 @@ export const NavUserBar: React.FC = () => {
   }, [])
 
   const logout = () => {
-    AuthApi.logout().then(() => window.location.reload())
+    AuthApi.logout()
   }
 
   return user ? (
