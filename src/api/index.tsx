@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from 'axios'
+import { GenericObject } from 'type/Common'
 
 const URL = process.env.REACT_APP_API
 if (!URL) throw new Error('REACT_APP_API url not found in .env file')
@@ -44,15 +45,15 @@ const setAuthorization = (token: string) => {
 }
 
 class APIClient {
-  get = (url: string, params?: any): Promise<any> => {
+  get = (url: string, params?: GenericObject): Promise<any> => {
     return axios.get(url, params)
   }
 
-  post = (url: string, data: any): Promise<any> => {
+  post = (url: string, data?: GenericObject): Promise<any> => {
     return axios.post(url, data)
   }
 
-  put = (url: string, data: any): Promise<any> => {
+  put = (url: string, data?: GenericObject): Promise<any> => {
     return axios.put(url, data)
   }
 

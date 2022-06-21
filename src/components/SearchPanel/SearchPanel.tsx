@@ -4,7 +4,7 @@ import React from 'react'
 
 interface SearchPanelProps {
   setSearchValue: (value: string) => void
-  searchValue?: string
+  searchValue: string
 }
 
 export const SearchPanel: React.FC<SearchPanelProps> = ({ setSearchValue, searchValue }) => {
@@ -22,7 +22,7 @@ export const SearchPanel: React.FC<SearchPanelProps> = ({ setSearchValue, search
       <div className="w-32">
         <FlowSelect />
       </div>
-      <Button color="info">Search</Button>
+      <Button color="light">Search</Button>
     </div>
   )
 }

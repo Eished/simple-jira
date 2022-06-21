@@ -9,10 +9,10 @@
   setTimeout(() => run(String(++i)), 2900)
  * 
  */
-export const debounce = (func: (...args: any) => any, delay: number) => {
+export const debounce = (func: (...args: unknown[]) => unknown, delay: number) => {
   console.log('debounce')
   let timer: number
-  return (...args: any) => {
+  return (...args: unknown[]) => {
     console.log('timer', args)
     if (timer) {
       clearTimeout(timer)

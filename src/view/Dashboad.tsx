@@ -2,7 +2,7 @@ import { SearchPanel } from 'components/SearchPanel/SearchPanel'
 import { useDebounce } from 'lib/customHooks'
 import React, { useEffect, useState } from 'react'
 
-export const Home: React.FC = () => {
+export const Dashboad: React.FC = () => {
   console.log('Home render...')
   const [searchValue, setSearchValue] = useState<string>('')
 
@@ -13,7 +13,10 @@ export const Home: React.FC = () => {
   }, [debounce])
 
   return (
-    <div className="flex justify-center m-5">
+    <div className="flex flex-col items-center m-5 space-y-4">
+      <div>
+        <p className="text-6xl text-sky-400">Dashboad</p>
+      </div>
       <SearchPanel searchValue={searchValue} setSearchValue={setSearchValue} />
     </div>
   )

@@ -17,7 +17,7 @@ export const useMount = (callback: () => void) => {
  * useEffect(() => {console.log('debounce')}, [debounce])
  */
 
-export const useDebounce = (value: any, delay: number) => {
+export const useDebounce = (value: unknown, delay: number) => {
   const [debounceValue, setDebounceValue] = useState(value)
 
   useEffect(() => {

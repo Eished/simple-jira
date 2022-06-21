@@ -1,6 +1,6 @@
 import AuthApi from 'api/auth'
 import UserApi from 'api/user'
-import { Avatar, Button, Dropdown, Navbar } from 'flowbite-react'
+import { Avatar, Button, DarkThemeToggle, Dropdown, Flowbite, Navbar } from 'flowbite-react'
 import React, { useEffect, useState } from 'react'
 import { User } from 'type/User'
 
@@ -16,7 +16,10 @@ export const NavUserBar: React.FC = () => {
   }
 
   return user ? (
-    <div className="flex md:order-2 z-50">
+    <div className="flex md:order-2 z-50 space-x-2">
+      <Flowbite>
+        <DarkThemeToggle />
+      </Flowbite>
       <Dropdown inline label={<Avatar alt="User settings" img={user.avatar} rounded />}>
         <Dropdown.Header>
           <span className="block text-sm">{user.firstName + ' ' + user.lastName}</span>

@@ -7,16 +7,16 @@ import { NavUserBar } from './NavUserBar'
 
 export const FlowNavBar: React.FC = () => {
   return (
-    <div className="w-full shadow flex justify-center">
+    <div className="w-full shadow flex justify-center dark:bg-gray-800">
       <div className="w-4/5">
         <Navbar>
           <React.Fragment key=".0">
-            <Link to="/">
+            <Link to="/" className="flex">
               <Logo />
             </Link>
             <NavUserBar />
             <Navbar.Collapse>
-              <NavLink to="/" text="Home" />
+              <NavLink to="/" text="Dashboad" />
               <NavLink to="/projects" text="Projects" />
               <NavLink to="/users" text="Users" />
               <NavLink to="/about" text="About" />

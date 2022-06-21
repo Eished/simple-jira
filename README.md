@@ -58,4 +58,6 @@ echo "fix: some message" # passes
 
 ## UI
 
+https://flowbite.com/
+
 https://flowbite-react.com/

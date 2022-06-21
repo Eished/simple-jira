@@ -10,7 +10,7 @@ const App: React.FC = () => {
   const user = UserApi.getMe()
 
   return (
-    <div className="flex flex-col justify-center">
+    <div className="flex flex-col justify-center dark:bg-gray-900">
       {user ? (
         <>
           <FlowNavBar />

@@ -13,6 +13,10 @@ interface ReactTableCardProps {
   hoverable?: boolean
 }
 
+interface RowProps {
+  value: unknown
+}
+
 export const ReactTableCard: React.FC<ReactTableCardProps> = ({
   title,
   data,
@@ -25,10 +29,10 @@ export const ReactTableCard: React.FC<ReactTableCardProps> = ({
       return {
         Header: headerItem,
         accessor: headerItem,
-        Cell: (props: any) => {
+        Cell: (props: RowProps) => {
           return (
-            <span title={props.value}>
-              <b>{props.value}</b>
+            <span title={props.value as string}>
+              <b>{props.value as string}</b>
             </span>
           )
         },
@@ -37,10 +41,13 @@ export const ReactTableCard: React.FC<ReactTableCardProps> = ({
       return {
         Header: '',
         accessor: headerItem,
-        Cell: (props: any) => {
+        Cell: (props: RowProps) => {
           return (
-            <a className="font-medium text-blue-600 hover:underline dark:text-blue-500" href="#">
-              {props.value}
+            <a
+              className="font-medium text-blue-600 hover:underline dark:text-blue-500"
+              href="#"
+              title={props.value as string}>
+              {props.value as string}
             </a>
           )
         },
@@ -49,8 +56,8 @@ export const ReactTableCard: React.FC<ReactTableCardProps> = ({
       return {
         Header: headerItem,
         accessor: headerItem,
-        Cell: (props: any) => {
-          return <span title={props.value}>{props.value}</span>
+        Cell: (props: RowProps) => {
+          return <span title={props.value as string}>{props.value as string}</span>
         },
       }
     }
