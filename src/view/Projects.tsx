@@ -1,4 +1,3 @@
-import { SearchPanel } from 'components/SearchPanel/SearchPanel'
 import { ReactTableCard } from 'components/Table/ReactTableCard'
 import React from 'react'
 
@@ -19,7 +18,6 @@ export const Projects: React.FC = () => {
   ]
   return (
     <div className="flex flex-col m-5 items-center space-y-6">
-      <SearchPanel />
       <ReactTableCard searchBar={false} data={data} />
     </div>
   )
