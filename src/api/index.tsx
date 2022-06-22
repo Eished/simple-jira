@@ -3,10 +3,11 @@ import axios from 'axios'
 import { GenericObject } from 'type/Common'
 
 const URL = process.env.REACT_APP_API_URL
+const JsonServerURL = process.env.REACT_APP_API
 if (!URL) throw new Error('REACT_APP_API url not found in .env file')
 
 // default
-axios.defaults.baseURL = URL + '/'
+axios.defaults.baseURL = JsonServerURL + '/' // URL or JsonServerURL
 
 // content type
 axios.defaults.headers.post['Content-Type'] = 'application/json'

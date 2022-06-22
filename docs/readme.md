@@ -58,7 +58,7 @@
 
 `npx msw init public`
 
-`.env` 增加 `REACT_APP_API_URL='http://localhost:3000'`
+`.env` 增加 `REACT_APP_API_URL='http://localhost:3005'` 任意端口
 
 数据由代码生成，用户需要自己使用注册接口注册
 
@@ -84,6 +84,8 @@
 - `reorderHandlers`
   - `/kanbans/reorder`
   - `/tasks/reorder`
+
+更改 `src/api/index.tsx:10` 来选择 JsonServer 或者 msw（jira-dev-tool） 后端
 
 https://www.npmjs.com/package/jira-dev-tool
 
