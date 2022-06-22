@@ -42,11 +42,7 @@ export const ReactTableCard: React.FC<ReactTableCardProps> = ({
         Header: '',
         accessor: headerItem,
         Cell: (props: RowProps) => {
-          return (
-            <a className="font-medium text-blue-600 hover:underline dark:text-blue-500" href="#" title={props.value}>
-              {props.value}
-            </a>
-          )
+          return <button className="font-medium text-blue-600 hover:underline dark:text-blue-500">{props.value}</button>
         },
       }
     } else {

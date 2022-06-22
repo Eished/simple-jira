@@ -10,6 +10,7 @@ export const Dashboad: React.FC = () => {
 
   useEffect(() => {
     console.log('searchValue debounce', searchValue)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debounce])
 
   return (
