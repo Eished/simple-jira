@@ -17,7 +17,7 @@ export const useMount = (callback: () => void) => {
  * useEffect(() => {console.log('debounce')}, [debounce])
  */
 
-export const useDebounce = (value: unknown, delay: number) => {
+export const useDebounce = <T>(value: T, delay: number) => {
   const [debounceValue, setDebounceValue] = useState(value)
 
   useEffect(() => {
@@ -28,4 +28,50 @@ export const useDebounce = (value: unknown, delay: number) => {
   }, [value, delay])
 
   return debounceValue
+}
+
+export const useArray = <T>(
+  value: T[]
+): [T[], (index: number, obj: T) => void, (index: number, obj: T) => void, (index: number) => void, () => void] => {
+  const [arr, setArr] = useState(value)
+
+  const clear = () => {
+    setArr([])
+  }
+  const add = (index: number, obj: T) => {
+    arr.splice(index, 0, obj)
+    setArr([...arr])
+  }
+  const replace = (index: number, obj: T) => {
+    arr.splice(index, 1, obj)
+    setArr([...arr])
+  }
+  const remove = (index: number) => {
+    arr.splice(index, 1)
+    setArr([...arr])
+  }
+
+  return [arr, add, replace, remove, clear]
+}
+
+export const useArray2Obj = <T>(value: T[]) => {
+  const [arr, setArr] = useState(value)
+
+  const clear = () => {
+    setArr([])
+  }
+  const add = (index: number, obj: T) => {
+    arr.splice(index, 0, obj)
+    setArr([...arr])
+  }
+  const replace = (index: number, obj: T) => {
+    arr.splice(index, 1, obj)
+    setArr([...arr])
+  }
+  const remove = (index: number) => {
+    arr.splice(index, 1)
+    setArr([...arr])
+  }
+
+  return { arr, add, replace, remove, clear }
 }

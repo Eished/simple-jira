@@ -14,39 +14,40 @@ type LoginRes =
 type LoginParams = { email: string; password: string }
 
 class AuthApi {
-  register(data: { email: string; password: string }): Promise<void | string> {
-    return API.post(USER_PATH, data)
+  register(params: LoginParams): Promise<void | string> {
+    return API.post(USER_PATH, params)
       .then((data: LoginRes) => {
-        if (typeof data === 'object') {
-          localStorage.setItem('token', data.accessToken)
-          localStorage.setItem('localUser', JSON.stringify(data.user))
-        } else {
-          return data
-        }
+        this.setToken(data)
       })
       .catch(function (error) {
         return error.response
       })
   }
+
   login({ email, password }: LoginParams): Promise<void | string> {
     return API.post('login', { email, password })
       .then((data: LoginRes) => {
-        if (typeof data === 'object') {
-          localStorage.setItem('token', data.accessToken)
-          localStorage.setItem('localUser', JSON.stringify(data.user))
-        } else {
-          return data
-        }
+        this.setToken(data)
       })
       .catch(function (error) {
         return error.response
       })
   }
+
   logout() {
     localStorage.removeItem('token')
     localStorage.removeItem('localUser')
     window.location.href = window.location.origin
     return Promise.resolve()
+  }
+
+  private setToken(data: LoginRes) {
+    if (typeof data === 'object') {
+      localStorage.setItem('token', data.accessToken)
+      localStorage.setItem('localUser', JSON.stringify(data.user))
+    } else {
+      return data
+    }
   }
 }
 

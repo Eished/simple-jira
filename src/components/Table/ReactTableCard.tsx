@@ -14,7 +14,7 @@ interface ReactTableCardProps {
 }
 
 interface RowProps {
-  value: unknown
+  value: string
 }
 
 export const ReactTableCard: React.FC<ReactTableCardProps> = ({
@@ -31,8 +31,8 @@ export const ReactTableCard: React.FC<ReactTableCardProps> = ({
         accessor: headerItem,
         Cell: (props: RowProps) => {
           return (
-            <span title={props.value as string}>
-              <b>{props.value as string}</b>
+            <span title={props.value}>
+              <b>{props.value}</b>
             </span>
           )
         },
@@ -43,11 +43,8 @@ export const ReactTableCard: React.FC<ReactTableCardProps> = ({
         accessor: headerItem,
         Cell: (props: RowProps) => {
           return (
-            <a
-              className="font-medium text-blue-600 hover:underline dark:text-blue-500"
-              href="#"
-              title={props.value as string}>
-              {props.value as string}
+            <a className="font-medium text-blue-600 hover:underline dark:text-blue-500" href="#" title={props.value}>
+              {props.value}
             </a>
           )
         },
@@ -57,7 +54,7 @@ export const ReactTableCard: React.FC<ReactTableCardProps> = ({
         Header: headerItem,
         accessor: headerItem,
         Cell: (props: RowProps) => {
-          return <span title={props.value as string}>{props.value as string}</span>
+          return <span title={props.value}>{props.value}</span>
         },
       }
     }

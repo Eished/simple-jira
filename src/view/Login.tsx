@@ -6,8 +6,8 @@ export const Login: React.FC = () => {
   const [show, setShow] = useState(true)
   const [remember, setRemember] = useState(false)
   const [register, setRegister] = useState(false)
-  const [email, setEmail] = useState<string | undefined>('Marilyne.Waters@simplejira.com')
-  const [password, setPassword] = useState<string | undefined>('nEiEQtUZ7DgL09m')
+  const [email, setEmail] = useState<string>('Marilyne.Waters@simplejira.com')
+  const [password, setPassword] = useState<string>('nEiEQtUZ7DgL09m')
 
   const login = () => {
     if (email && password) {

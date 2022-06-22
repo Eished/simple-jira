@@ -7,23 +7,23 @@ module.exports = {
     'prettier',
     'react-app',
     'react-app/jest',
-  ], //定义文件继承的子规范
-  plugins: ['react-hooks', 'eslint-plugin-react', 'react', 'prettier'], //定义了该eslint文件所依赖的插件
+  ], // 定义文件继承的子规范
+  plugins: ['react-hooks', 'eslint-plugin-react', 'react', 'prettier', 'html'], // 定义了该eslint文件所依赖的插件
   env: {
-    //指定代码的运行环境
+    // 指定代码的运行环境
     browser: true,
     node: true,
     es2021: true,
   },
   settings: {
-    //自动发现React的版本，从而进行规范react代码
+    // 自动发现React的版本，从而进行规范react代码
     react: {
       pragma: 'React',
       version: 'detect',
     },
   },
   parserOptions: {
-    //指定ESLint可以解析JSX语法
+    // 指定ESLint可以解析JSX语法
     ecmaFeatures: {
       jsx: true,
     },
@@ -31,7 +31,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    // 自定义的一些规则
+    // 自定义的一些规则: 0 关闭 1 警告 2 错误
     'prettier/prettier': 1,
     'linebreak-style': [2, 'unix'],
     'react-hooks/rules-of-hooks': 2,
