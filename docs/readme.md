@@ -51,3 +51,40 @@
     },
   }
 ```
+
+### jira-dev-tool mock 后端的配置
+
+`yarn add jira-dev-tool`
+
+`npx msw init public`
+
+`.env` 增加 `REACT_APP_API_URL='http://localhost:3000'`
+
+数据由代码生成，用户需要自己使用注册接口注册
+
+接口：
+
+- `ctrl P` 输入 `node_modules/jira-dev-tool/dist/index.js:29639` 回车，即可看到接口
+
+  - 在里面搜索 `msw.rest.` 可以看到所有接口所需要的数据
+
+- `userHandlers`
+  - `/login`
+  - `/register`
+  - `/me`
+- `getRestHandlers`
+  - `/projects`
+  - `/epics`
+  - `/tasks`
+  - `/kanbans`
+  - `/persons`
+  - `/taskTypes`
+  - `/tags`
+  - `/users`
+- `reorderHandlers`
+  - `/kanbans/reorder`
+  - `/tasks/reorder`
+
+https://www.npmjs.com/package/jira-dev-tool
+
+https://github.com/mswjs/examples/tree/master/examples/rest-react

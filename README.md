@@ -61,3 +61,5 @@ echo "fix: some message" # passes
 https://flowbite.com/
 
 https://flowbite-react.com/
+
+## [jira-dev-tool Configuration](/docs/readme.md)

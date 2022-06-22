@@ -2,7 +2,7 @@
 import axios from 'axios'
 import { GenericObject } from 'type/Common'
 
-const URL = process.env.REACT_APP_API
+const URL = process.env.REACT_APP_API_URL
 if (!URL) throw new Error('REACT_APP_API url not found in .env file')
 
 // default

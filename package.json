@@ -78,6 +78,7 @@
     "jest": "^27.4.3",
     "jest-resolve": "^27.4.2",
     "jest-watch-typeahead": "^1.0.0",
+    "jira-dev-tool": "^1.7.61",
     "json-server": "^0.17.0",
     "json-server-auth": "^2.1.0",
     "lint-staged": ">=10",
