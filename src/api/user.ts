@@ -13,7 +13,7 @@ class UserApi {
     return API.get(this.subUrl + id)
   }
   getMe(): User | undefined {
-    const localUser = localStorage.getItem('localUser')
+    const localUser = localStorage.getItem('user')
     if (localUser) return JSON.parse(localUser)
   }
   getAllUsers(): Promise<User[]> {

@@ -2,9 +2,9 @@ name: NodeJS with Webpack
 
 on:
   push:
-    branches: ['main']
+    branches: ['msw-backend']
   pull_request:
-    branches: ['main']
+    branches: ['msw-backend']
 
 jobs:
   build:

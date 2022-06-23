@@ -13,7 +13,7 @@ export const Login: React.FC = () => {
 
   const login = () => {
     if (email && password) {
-      authApi.login({ email, password }).then((data) => {
+      authApi.login({ username: email, password }).then((data) => {
         if (data) {
           alert(data)
         } else {
@@ -24,7 +24,7 @@ export const Login: React.FC = () => {
   }
   const registerUser = () => {
     if (email && password) {
-      authApi.register({ email, password }).then((data) => {
+      authApi.register({ username: email, password }).then((data) => {
         if (data) {
           alert(data)
         } else {
@@ -71,10 +71,7 @@ export const Login: React.FC = () => {
             {register ? (
               <>
                 <div className="w-full">
-                  Not finished...
-                  <Button onClick={registerUser} disabled>
-                    Register a new user
-                  </Button>
+                  <Button onClick={registerUser}>Register a new user</Button>
                 </div>
                 <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
                   <a
