@@ -34,7 +34,7 @@ jobs:
           # Build directory to deploy
           build_dir: build
           # Write the given domain name to the CNAME file
-          #fqdn: custom.domain.name # optional
+          fqdn: jira.iknow.fun
           # Prevent Jekyll from building the site
           jekyll: false
         env:
