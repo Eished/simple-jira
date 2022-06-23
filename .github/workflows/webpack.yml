@@ -25,7 +25,7 @@ jobs:
       - name: Build
         run: |
           yarn install
-          yarn build
+          REACT_APP_API_URL=/api yarn build
       - name: GitHub Pages
         uses: crazy-max/ghaction-github-pages@v3.0.0
         with:

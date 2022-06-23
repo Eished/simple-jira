@@ -12,7 +12,7 @@ type LoginParams = { username: string; password: string }
 
 class AuthApi {
   register(params: LoginParams): Promise<void | string> {
-    return API.post('register/', params)
+    return API.post('api/register/', params)
       .then((data: LoginRes) => {
         this.setToken(data)
       })
@@ -22,7 +22,7 @@ class AuthApi {
   }
 
   login(params: LoginParams): Promise<void | string> {
-    return API.post('login', params)
+    return API.post('api/login', params)
       .then((data: LoginRes) => {
         this.setToken(data)
       })

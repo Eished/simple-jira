@@ -5,7 +5,7 @@ const API = new APIClient()
 
 class UserApi {
   subUrl
-  constructor(subUrl = 'users/') {
+  constructor(subUrl = 'api/users/') {
     API.setAuthorization()
     this.subUrl = subUrl
   }
