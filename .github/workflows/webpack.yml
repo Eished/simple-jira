@@ -2,9 +2,9 @@ name: NodeJS with Webpack
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ['main']
   pull_request:
-    branches: [ "main" ]
+    branches: ['main']
 
 jobs:
   build:
@@ -13,21 +13,29 @@ jobs:
     strategy:
       matrix:
         node-version: [14.x]
-    
+
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
 
-    - name: Build
-      run: |
-        yarn install
-        yarn build
-    - name: Auto build user.js to main branch
-      uses: JamesIves/github-pages-deploy-action@4.1.1
-      with:
-        branch: gh-pages
-        folder: public
+      - name: Build
+        run: |
+          yarn install
+          yarn build
+      - name: GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v3.0.0
+        with:
+          # Git branch where site will be deployed
+          target_branch: gh-pages
+          # Build directory to deploy
+          build_dir: build
+          # Write the given domain name to the CNAME file
+          #fqdn: custom.domain.name # optional
+          # Prevent Jekyll from building the site
+          jekyll: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
