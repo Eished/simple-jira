@@ -1,7 +1,6 @@
-import { APIClient } from 'api'
+import APIClient from 'api/apiClient'
 import { User } from 'type/User'
 
-const USER_PATH = 'users/'
 const API = new APIClient()
 
 type LoginRes =
@@ -15,7 +14,7 @@ type LoginParams = { email: string; password: string }
 
 class AuthApi {
   register(params: LoginParams): Promise<void | string> {
-    return API.post(USER_PATH, params)
+    return API.post('users/', params)
       .then((data: LoginRes) => {
         this.setToken(data)
       })
@@ -41,6 +40,10 @@ class AuthApi {
     return Promise.resolve()
   }
 
+  isLogin() {
+    return !!localStorage.getItem('token')
+  }
+
   private setToken(data: LoginRes) {
     if (typeof data === 'object') {
       localStorage.setItem('token', data.accessToken)
@@ -51,4 +54,4 @@ class AuthApi {
   }
 }
 
-export default new AuthApi()
+export default AuthApi

@@ -5,14 +5,16 @@ import React, { useEffect, useState } from 'react'
 import { User } from 'type/User'
 
 export const NavUserBar: React.FC = () => {
+  const userApi = new UserApi()
+  const authApi = new AuthApi()
   const [user, setUser] = useState<User | undefined>(undefined)
 
   useEffect(() => {
-    setUser(UserApi.getMe())
+    setUser(userApi.getMe())
   }, [])
 
   const logout = () => {
-    AuthApi.logout()
+    authApi.logout()
   }
 
   return user ? (

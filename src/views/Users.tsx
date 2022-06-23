@@ -5,9 +5,11 @@ import React, { useState } from 'react'
 import { User } from 'type/User'
 
 export const Users: React.FC = () => {
+  const userApi = new UserApi()
+
   const [users, setUsers] = useState<User[]>([])
   useMount(() => {
-    UserApi.getAllUsers().then((data) => setUsers(data))
+    userApi.getAllUsers().then((data) => setUsers(data))
   })
 
   return (

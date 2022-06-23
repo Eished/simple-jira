@@ -9,9 +9,11 @@ export const Login: React.FC = () => {
   const [email, setEmail] = useState<string>('Marilyne.Waters@simplejira.com')
   const [password, setPassword] = useState<string>('nEiEQtUZ7DgL09m')
 
+  const authApi = new AuthApi()
+
   const login = () => {
     if (email && password) {
-      AuthApi.login({ email, password }).then((data) => {
+      authApi.login({ email, password }).then((data) => {
         if (data) {
           alert(data)
         } else {
@@ -22,7 +24,7 @@ export const Login: React.FC = () => {
   }
   const registerUser = () => {
     if (email && password) {
-      AuthApi.register({ email, password }).then((data) => {
+      authApi.register({ email, password }).then((data) => {
         if (data) {
           alert(data)
         } else {
