@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
-import { colors } from '@atlaskit/theme'
 import styled from '@emotion/styled'
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import Column from './column'
 import reorder, { reorderQuoteMap } from './reorder'
@@ -13,43 +12,34 @@ const ParentContainer = styled.div`
 `
 
 const Container = styled.div`
-  background-color: ${colors.B100};
+  background-color: #4c9aff;
   /* min-height: 100vh; */
   /* like display:flex but will allow bleeding over the window width */
   /* min-width: 100vw; */
   display: inline-flex;
 `
 
-class Board extends Component {
-  /* eslint-disable react/sort-comp */
-  static defaultProps = {
-    isCombineEnabled: false,
-  }
+const Board = ({ isCombineEnabled = false, initial, containerHeight = '', withScrollableColumns = '' }) => {
+  const [ordered, setOrdered] = useState(Object.keys(initial))
+  const [columns, setColumns] = useState(initial)
 
-  state = {
-    columns: this.props.initial,
-    ordered: Object.keys(this.props.initial),
-  }
-
-  boardRef
-
-  onDragEnd = (result) => {
+  const onDragEnd = (result) => {
     if (result.combine) {
       if (result.type === 'COLUMN') {
-        const shallow = [...this.state.ordered]
+        const shallow = [...ordered]
         shallow.splice(result.source.index, 1)
-        this.setState({ ordered: shallow })
+        setOrdered(shallow)
         return
       }
 
-      const column = this.state.columns[result.source.droppableId]
+      const column = columns[result.source.droppableId]
       const withQuoteRemoved = [...column]
       withQuoteRemoved.splice(result.source.index, 1)
-      const columns = {
-        ...this.state.columns,
+      const newColumns = {
+        ...columns,
         [result.source.droppableId]: withQuoteRemoved,
       }
-      this.setState({ columns })
+      setColumns(newColumns)
       return
     }
 
@@ -68,64 +58,52 @@ class Board extends Component {
 
     // reordering column
     if (result.type === 'COLUMN') {
-      const ordered = reorder(this.state.ordered, source.index, destination.index)
-
-      this.setState({
-        ordered,
-      })
-
+      const newUrdered = reorder(ordered, source.index, destination.index)
+      setOrdered(newUrdered)
       return
     }
 
     const data = reorderQuoteMap({
-      quoteMap: this.state.columns,
+      quoteMap: columns,
       source,
       destination,
     })
 
-    this.setState({
-      columns: data.quoteMap,
-    })
+    setColumns(data.quoteMap)
   }
 
-  render() {
-    const columns = this.state.columns
-    const ordered = this.state.ordered
-    const { containerHeight } = this.props
+  const board = (
+    <Droppable
+      droppableId="board"
+      type="COLUMN"
+      direction="horizontal"
+      ignoreContainerClipping={Boolean(containerHeight)}
+      isCombineEnabled={isCombineEnabled}>
+      {(provided) => (
+        <Container ref={provided.innerRef} {...provided.droppableProps}>
+          {ordered.map((key, index) => (
+            <Column
+              key={key}
+              index={index}
+              title={key}
+              quotes={columns[key]}
+              isScrollable={withScrollableColumns}
+              isCombineEnabled={isCombineEnabled}
+            />
+          ))}
+          {provided.placeholder}
+        </Container>
+      )}
+    </Droppable>
+  )
 
-    const board = (
-      <Droppable
-        droppableId="board"
-        type="COLUMN"
-        direction="horizontal"
-        ignoreContainerClipping={Boolean(containerHeight)}
-        isCombineEnabled={this.props.isCombineEnabled}>
-        {(provided) => (
-          <Container ref={provided.innerRef} {...provided.droppableProps}>
-            {ordered.map((key, index) => (
-              <Column
-                key={key}
-                index={index}
-                title={key}
-                quotes={columns[key]}
-                isScrollable={this.props.withScrollableColumns}
-                isCombineEnabled={this.props.isCombineEnabled}
-              />
-            ))}
-            {provided.placeholder}
-          </Container>
-        )}
-      </Droppable>
-    )
-
-    return (
-      <React.Fragment>
-        <DragDropContext onDragEnd={this.onDragEnd}>
-          {containerHeight ? <ParentContainer height={containerHeight}>{board}</ParentContainer> : board}
-        </DragDropContext>
-      </React.Fragment>
-    )
-  }
+  return (
+    <React.Fragment>
+      <DragDropContext onDragEnd={onDragEnd}>
+        {containerHeight ? <ParentContainer height={containerHeight}>{board}</ParentContainer> : board}
+      </DragDropContext>
+    </React.Fragment>
+  )
 }
 
-export { Board }
+export default Board

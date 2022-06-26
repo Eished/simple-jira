@@ -1,7 +1,5 @@
 /* eslint-disable react/prop-types */
-import { colors } from '@atlaskit/theme'
 import styled from '@emotion/styled'
-import React from 'react'
 import { borderRadius, grid } from '../constants'
 
 const getBackgroundColor = (isDragging, isGroupedOver, authorColors) => {
@@ -10,10 +8,10 @@ const getBackgroundColor = (isDragging, isGroupedOver, authorColors) => {
   }
 
   if (isGroupedOver) {
-    return colors.N30
+    return '#EBECF0'
   }
 
-  return colors.N0
+  return '#FFFFFF'
 }
 
 const getBorderColor = (isDragging, authorColors) => (isDragging ? authorColors.hard : 'transparent')
@@ -23,18 +21,18 @@ const Container = styled.a`
   border: 2px solid transparent;
   border-color: ${(props) => getBorderColor(props.isDragging, props.colors)};
   background-color: ${(props) => getBackgroundColor(props.isDragging, props.isGroupedOver, props.colors)};
-  box-shadow: ${({ isDragging }) => (isDragging ? `2px 2px 1px ${colors.N70}` : 'none')};
+  box-shadow: ${({ isDragging }) => (isDragging ? `2px 2px 1px #A5ADBA` : 'none')};
   padding: ${grid}px;
   min-height: 40px;
   margin-bottom: ${grid}px;
   user-select: none;
 
   /* anchor overrides */
-  color: ${colors.N900};
+  color: #091e42;
 
   &:hover,
   &:active {
-    color: ${colors.N900};
+    color: #091e42;
     text-decoration: none;
   }
 
@@ -110,28 +108,26 @@ const QuoteId = styled.small`
 // Need to be super sure we are not relying on PureComponent here for
 // things we should be doing in the selector as we do not know if consumers
 // will be using PureComponent
-export default class QuoteItem extends React.PureComponent {
-  render() {
-    const { quote, isDragging, isGroupedOver, provided } = this.props
-
-    return (
-      <Container
-        href={quote.author.url}
-        isDragging={isDragging}
-        isGroupedOver={isGroupedOver}
-        colors={quote.author.colors}
-        ref={provided.innerRef}
-        {...provided.draggableProps}
-        {...provided.dragHandleProps}>
-        <Avatar src={quote.author.avatarUrl} alt={quote.author.name} />
-        <Content>
-          <BlockQuote>{quote.content}</BlockQuote>
-          <Footer>
-            <Author colors={quote.author.colors}>{quote.author.name}</Author>
-            <QuoteId>id:{quote.id}</QuoteId>
-          </Footer>
-        </Content>
-      </Container>
-    )
-  }
+const QuoteItem = ({ quote, isDragging, isGroupedOver, provided }) => {
+  return (
+    <Container
+      href={quote.author.url}
+      isDragging={isDragging}
+      isGroupedOver={isGroupedOver}
+      colors={quote.author.colors}
+      ref={provided.innerRef}
+      {...provided.draggableProps}
+      {...provided.dragHandleProps}>
+      <Avatar src={quote.author.avatarUrl} alt={quote.author.name} />
+      <Content>
+        <BlockQuote>{quote.content}</BlockQuote>
+        <Footer>
+          <Author colors={quote.author.colors}>{quote.author.name}</Author>
+          <QuoteId>id:{quote.id}</QuoteId>
+        </Footer>
+      </Content>
+    </Container>
+  )
 }
+
+export default QuoteItem

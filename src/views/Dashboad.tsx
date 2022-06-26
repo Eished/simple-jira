@@ -1,4 +1,4 @@
-import { Board } from 'components/dnd/board'
+import Board from 'components/dnd/board'
 import { authorQuoteMap } from 'components/dnd/data'
 import { SearchPanel } from 'components/SearchPanel/SearchPanel'
 import { useDebounce } from 'lib/customHooks'

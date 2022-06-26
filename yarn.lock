@@ -53,41 +53,6 @@
     jsonpointer "^5.0.0"
     leven "^3.1.0"
 
-"@atlaskit/codemod-utils@^4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@atlaskit/codemod-utils/-/codemod-utils-4.1.0.tgz#63541c7f112c4baba5e22f0e98ddd2acd324f203"
-  integrity sha512-k7uLovYWjO7nPwK6MWiTES8STdh/qPPX6WrppWCokHXIoemGEi1CTKpEXMHrjWyrxqzVGhux7hAb0hDMBan9Gg==
-  dependencies:
-    "@babel/runtime" "^7.0.0"
-
-"@atlaskit/ds-lib@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@atlaskit/ds-lib/-/ds-lib-2.0.0.tgz#62c313ad8f9c66b02d199a18357abfbb65e007de"
-  integrity sha512-e+tY5G0SW5UFT5z09fTF9lYLFjScGKKafP/3A8uQJOtsg53DGuXyOj7DA1cGPEpyZmHaGxOmxtEXiSGBCxcrlA==
-  dependencies:
-    "@babel/runtime" "^7.0.0"
-    bind-event-listener "^2.1.0"
-
-"@atlaskit/theme@^12.1.9":
-  version "12.1.9"
-  resolved "https://registry.yarnpkg.com/@atlaskit/theme/-/theme-12.1.9.tgz#51ca00ca2830499ad4e8e10a1b0250f7e3ee40ee"
-  integrity sha512-75y9wdmtoSsccGwBeTpbces+oAoRSBKtfvK787bbKXDxLVy+zp2f/YO9wAoefL4j3n1JA3YG91C3gmoKJew4Tg==
-  dependencies:
-    "@atlaskit/codemod-utils" "^4.1.0"
-    "@atlaskit/ds-lib" "^2.0.0"
-    "@atlaskit/tokens" "^0.10.0"
-    "@babel/runtime" "^7.0.0"
-
-"@atlaskit/tokens@^0.10.0":
-  version "0.10.9"
-  resolved "https://registry.yarnpkg.com/@atlaskit/tokens/-/tokens-0.10.9.tgz#eb8f907b923c8866da8eeaa8cc1f01a40d716149"
-  integrity sha512-Hd+N+qvj/vXLviTNVOFftSSgqsBQEmJ0otKng+DXe5+P2siO7c4+SyKG0T/V8TxcVAMVy5ny0dH3DEXZnhYqHw==
-  dependencies:
-    "@atlaskit/ds-lib" "^2.0.0"
-    "@babel/runtime" "^7.0.0"
-    "@babel/traverse" "^7.15.0"
-    "@babel/types" "^7.15.0"
-
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.10.4", "@babel/code-frame@^7.12.13", "@babel/code-frame@^7.16.0", "@babel/code-frame@^7.16.7", "@babel/code-frame@^7.8.3":
   version "7.16.7"
   resolved "https://registry.npmmirror.com/@babel/code-frame/-/code-frame-7.16.7.tgz#44416b6bd7624b998f5b1af5d470856c40138789"
@@ -1118,7 +1083,7 @@
     core-js-pure "^3.20.2"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.10.1", "@babel/runtime@^7.10.4", "@babel/runtime@^7.10.5", "@babel/runtime@^7.11.1", "@babel/runtime@^7.13.10", "@babel/runtime@^7.15.4", "@babel/runtime@^7.18.0", "@babel/runtime@^7.18.3", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.6":
+"@babel/runtime@^7.10.1", "@babel/runtime@^7.10.4", "@babel/runtime@^7.10.5", "@babel/runtime@^7.11.1", "@babel/runtime@^7.13.10", "@babel/runtime@^7.15.4", "@babel/runtime@^7.18.0", "@babel/runtime@^7.18.3", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.6":
   version "7.18.3"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.18.3.tgz#c7b654b57f6f63cf7f8b418ac9ca04408c4579f4"
   integrity sha512-38Y8f7YUhce/K7RMwTp7m0uCumpv9hZkitCbBClqQIow1qSbCvGkcegKOXpEWCQLfWmevgRiWokZ1GkpfhbZug==
@@ -1157,7 +1122,7 @@
     debug "^4.1.0"
     globals "^11.1.0"
 
-"@babel/traverse@^7.15.0", "@babel/traverse@^7.4.5":
+"@babel/traverse@^7.4.5":
   version "7.18.5"
   resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.18.5.tgz#94a8195ad9642801837988ab77f36e992d9a20cd"
   integrity sha512-aKXj1KT66sBj0vVzk6rEeAO6Z9aiiQ68wfDgge3nHhA/my6xMM/7HGQUNumKZaoa2qUPQ5whJG9aAifsxUKfLA==
@@ -1181,7 +1146,7 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
 
-"@babel/types@^7.15.0", "@babel/types@^7.18.2", "@babel/types@^7.18.4":
+"@babel/types@^7.18.2", "@babel/types@^7.18.4":
   version "7.18.4"
   resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.18.4.tgz#27eae9b9fd18e9dccc3f9d6ad051336f307be354"
   integrity sha512-ThN1mBcMq5pG/Vm2IcBmPPfyPXbd8S02rS+OBIDENdufvqC7Z/jHPCv9IcP01277aKtDI8g/2XysBN4hA8niiw==
@@ -3457,11 +3422,6 @@ binary-extensions@^2.0.0:
   version "2.2.0"
   resolved "https://registry.npmmirror.com/binary-extensions/-/binary-extensions-2.2.0.tgz#75f502eeaf9ffde42fc98829645be4ea76bd9e2d"
   integrity sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==
-
-bind-event-listener@^2.1.0:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/bind-event-listener/-/bind-event-listener-2.1.1.tgz#5e57290181af3027ff53ba6109e417a1e3cbb6f3"
-  integrity sha512-O+a5c0D2se/u2VlBJmPRn45IB6R4mYMh1ok3dWxrIZ2pmLqzggBhb875mbq73508ylzofc0+hT9W41x4Y2s8lg==
 
 bl@^4.1.0:
   version "4.1.0"

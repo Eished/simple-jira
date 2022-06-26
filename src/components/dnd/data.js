@@ -1,4 +1,3 @@
-import { colors } from '@atlaskit/theme'
 import {
   default as bmoImg,
   default as finnImg,
@@ -12,8 +11,8 @@ const jake = {
   url: 'http://adventuretime.wikia.com/wiki/Jake',
   avatarUrl: jakeImg,
   colors: {
-    soft: colors.Y50,
-    hard: colors.Y200,
+    soft: '#FFFAE6',
+    hard: '#FFC400',
   },
 }
 
@@ -23,8 +22,8 @@ const BMO = {
   url: 'http://adventuretime.wikia.com/wiki/BMO',
   avatarUrl: bmoImg,
   colors: {
-    soft: colors.G50,
-    hard: colors.G200,
+    soft: '#E3FCEF',
+    hard: '#57D9A3',
   },
 }
 
@@ -34,8 +33,8 @@ const finn = {
   url: 'http://adventuretime.wikia.com/wiki/Finn',
   avatarUrl: finnImg,
   colors: {
-    soft: colors.B50,
-    hard: colors.B200,
+    soft: '#DEEBFF',
+    hard: '#2684FF',
   },
 }
 
@@ -45,8 +44,8 @@ const princess = {
   url: 'http://adventuretime.wikia.com/wiki/Princess_Bubblegum',
   avatarUrl: princessImg,
   colors: {
-    soft: colors.P50,
-    hard: colors.P200,
+    soft: '#EAE6FF',
+    hard: '#8777D9',
   },
 }
 
