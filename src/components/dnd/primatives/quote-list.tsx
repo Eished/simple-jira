@@ -1,21 +1,28 @@
-/* eslint-disable react/prop-types */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import styled from '@emotion/styled'
-import { Draggable, Droppable } from 'react-beautiful-dnd'
+import { Draggable, Droppable, DroppableProvided } from 'react-beautiful-dnd'
 import { grid } from '../constants'
+import { IQuote } from '../data'
 import QuoteItem from './quote-item'
 
-const getBackgroundColor = (isDraggingOver, isDraggingFrom) => {
+const getBackgroundColor = (isDraggingOver: boolean, isDraggingFrom: boolean) => {
   if (isDraggingOver) {
-    return '#FFEBE6'
+    return '#a7f5ff'
   }
   if (isDraggingFrom) {
-    return '#E6FCFF'
+    return '#e8e8e8'
   }
   return '#EBECF0'
 }
 
-const Wrapper = styled.div`
-  background-color: ${(props) => getBackgroundColor(props.isDraggingOver, props.isDraggingFrom)};
+interface WrapperProps {
+  isDropDisabled: boolean
+  isDraggingOver: boolean
+  isDraggingFrom: boolean
+}
+
+const Wrapper = styled.div<WrapperProps>`
+  background-color: ${(props: any) => getBackgroundColor(props.isDraggingOver, props.isDraggingFrom)};
   display: flex;
   flex-direction: column;
   opacity: ${({ isDropDisabled }) => (isDropDisabled ? 0.5 : 'inherit')};
@@ -27,7 +34,7 @@ const Wrapper = styled.div`
   width: 250px;
 `
 
-const scrollContainerHeight = 250
+const scrollContainerHeight = 500
 
 const DropZone = styled.div`
   /* stop the list collapsing when empty */
@@ -45,13 +52,12 @@ const ScrollContainer = styled.div`
   max-height: ${scrollContainerHeight}px;
 `
 
-/* stylelint-disable block-no-empty */
 const Container = styled.div``
-/* stylelint-enable */
 
-const InnerQuoteList = ({ quotes }) => {
+const InnerQuoteList = (quotes: IQuote[]) => {
   return quotes.map((quote, index) => (
-    <Draggable key={quote.id} draggableId={quote.id} index={index} shouldRespectForceTouch={false}>
+    <Draggable key={quote.id} draggableId={quote.id} index={index}>
+      {/* shouldRespectForceTouch={false} */}
       {(dragProvided, dragSnapshot) => (
         <QuoteItem
           key={quote.id}
@@ -65,19 +71,40 @@ const InnerQuoteList = ({ quotes }) => {
   ))
 }
 
-const InnerList = ({ dropProvided, quotes, title }) => {
+const InnerList = ({
+  dropProvided,
+  quotes,
+  title,
+}: {
+  dropProvided: DroppableProvided
+  quotes: IQuote[]
+  title?: string
+}) => {
   return (
     <Container>
       {title}
       <DropZone ref={dropProvided.innerRef}>
-        <InnerQuoteList quotes={quotes} />
+        {InnerQuoteList(quotes)}
         {dropProvided.placeholder}
       </DropZone>
     </Container>
   )
 }
 
-const QuoteList = ({
+interface QuoteListProps {
+  ignoreContainerClipping?: boolean
+  internalScroll?: boolean
+  scrollContainerStyle?: React.CSSProperties
+  isDropDisabled: boolean
+  isCombineEnabled?: boolean
+  listId: string
+  listType?: string
+  style?: React.CSSProperties
+  quotes: IQuote[]
+  title?: string
+}
+
+const QuoteList: React.FC<QuoteListProps> = ({
   ignoreContainerClipping,
   internalScroll,
   scrollContainerStyle,

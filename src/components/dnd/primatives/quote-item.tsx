@@ -1,8 +1,17 @@
-/* eslint-disable react/prop-types */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import styled from '@emotion/styled'
+import { DraggableProvided } from 'react-beautiful-dnd'
 import { borderRadius, grid } from '../constants'
+import { IQuote } from '../data'
 
-const getBackgroundColor = (isDragging, isGroupedOver, authorColors) => {
+const getBackgroundColor = (
+  isDragging: boolean,
+  isGroupedOver: boolean,
+  authorColors: {
+    soft: string
+    hard: string
+  }
+) => {
   if (isDragging) {
     return authorColors.soft
   }
@@ -14,13 +23,18 @@ const getBackgroundColor = (isDragging, isGroupedOver, authorColors) => {
   return '#FFFFFF'
 }
 
-const getBorderColor = (isDragging, authorColors) => (isDragging ? authorColors.hard : 'transparent')
-
-const Container = styled.a`
+const Container = styled.a<{
+  isDragging: boolean
+  isGroupedOver: boolean
+  colors: {
+    soft: string
+    hard: string
+  }
+}>`
   border-radius: ${borderRadius}px;
   border: 2px solid transparent;
-  border-color: ${(props) => getBorderColor(props.isDragging, props.colors)};
-  background-color: ${(props) => getBackgroundColor(props.isDragging, props.isGroupedOver, props.colors)};
+  border-color: ${(props: any) => (props.isDragging ? props.colors.hard : 'transparent')};
+  background-color: ${(props: any) => getBackgroundColor(props.isDragging, props.isGroupedOver, props.colors)};
   box-shadow: ${({ isDragging }) => (isDragging ? `2px 2px 1px #A5ADBA` : 'none')};
   padding: ${grid}px;
   min-height: 40px;
@@ -38,7 +52,7 @@ const Container = styled.a`
 
   &:focus {
     outline: none;
-    border-color: ${(props) => props.colors.hard};
+    border-color: ${(props: any) => props.colors.hard};
     box-shadow: none;
   }
 
@@ -83,10 +97,15 @@ const Footer = styled.div`
   align-items: center;
 `
 
-const Author = styled.small`
+const Author = styled.small<{
+  colors: {
+    soft: string
+    hard: string
+  }
+}>`
   flex-grow: 0;
   margin: 0;
-  background-color: ${(props) => props.colors.soft};
+  background-color: ${(props: any) => props.colors.soft};
   border-radius: ${borderRadius}px;
   font-weight: normal;
   padding: ${grid / 2}px;
@@ -108,7 +127,14 @@ const QuoteId = styled.small`
 // Need to be super sure we are not relying on PureComponent here for
 // things we should be doing in the selector as we do not know if consumers
 // will be using PureComponent
-const QuoteItem = ({ quote, isDragging, isGroupedOver, provided }) => {
+interface QuoteItemProps {
+  quote: IQuote
+  isDragging: boolean
+  isGroupedOver: boolean
+  provided: DraggableProvided
+}
+
+const QuoteItem: React.FC<QuoteItemProps> = ({ quote, isDragging, isGroupedOver, provided }) => {
   return (
     <Container
       href={quote.author.url}

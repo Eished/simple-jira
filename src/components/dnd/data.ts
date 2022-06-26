@@ -7,8 +7,8 @@ import {
 
 const jake = {
   id: '1',
-  name: 'Jake',
-  url: 'http://adventuretime.wikia.com/wiki/Jake',
+  name: 'TO DO',
+  url: '#',
   avatarUrl: jakeImg,
   colors: {
     soft: '#FFFAE6',
@@ -18,8 +18,8 @@ const jake = {
 
 const BMO = {
   id: '2',
-  name: 'BMO',
-  url: 'http://adventuretime.wikia.com/wiki/BMO',
+  name: 'IN PROGRESS',
+  url: '#',
   avatarUrl: bmoImg,
   colors: {
     soft: '#E3FCEF',
@@ -29,8 +29,8 @@ const BMO = {
 
 const finn = {
   id: '3',
-  name: 'Finn',
-  url: 'http://adventuretime.wikia.com/wiki/Finn',
+  name: 'CODE REVIEW',
+  url: '#',
   avatarUrl: finnImg,
   colors: {
     soft: '#DEEBFF',
@@ -40,8 +40,8 @@ const finn = {
 
 const princess = {
   id: '4',
-  name: 'Princess bubblegum',
-  url: 'http://adventuretime.wikia.com/wiki/Princess_Bubblegum',
+  name: 'FINISHED',
+  url: '#',
   avatarUrl: princessImg,
   colors: {
     soft: '#EAE6FF',
@@ -49,9 +49,26 @@ const princess = {
   },
 }
 
-export const authors = [jake, BMO, finn, princess]
+export interface IAuthor {
+  id: string
+  name: string
+  url: string
+  avatarUrl: string
+  colors: {
+    soft: string
+    hard: string
+  }
+}
 
-export const quotes = [
+export interface IQuote {
+  id: string
+  content: string
+  author: IAuthor
+}
+
+export const authors: IAuthor[] = [jake, BMO, finn, princess]
+
+export const quotes: IQuote[] = [
   {
     id: '1',
     content: 'Sometimes life is scary and dark',
@@ -114,9 +131,13 @@ export const quotes = [
   },
 ]
 
-const getByAuthor = (author, items) => items.filter((quote) => quote.author === author)
+const getByAuthor = (author: IAuthor, items: IQuote[]) => items.filter((quote) => quote.author === author)
 
-export const authorQuoteMap = authors.reduce(
+export interface IAuthorQuoteMap {
+  [key: string]: IQuote[]
+}
+
+export const authorQuoteMap: IAuthorQuoteMap = authors.reduce(
   (previous, author) => ({
     ...previous,
     [author.name]: getByAuthor(author, quotes),

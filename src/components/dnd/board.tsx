@@ -1,29 +1,21 @@
-/* eslint-disable react/prop-types */
-import styled from '@emotion/styled'
 import React, { useState } from 'react'
-import { DragDropContext, Droppable } from 'react-beautiful-dnd'
+import { DragDropContext, Droppable, DropResult } from 'react-beautiful-dnd'
 import Column from './column'
+import { IAuthorQuoteMap } from './data'
 import reorder, { reorderQuoteMap } from './reorder'
 
-const ParentContainer = styled.div`
-  /* height: ${({ height }) => height}; */
-  /* overflow-x: hidden;
-  overflow-y: auto; */
-`
+interface BoardProps {
+  isCombineEnabled?: boolean
+  initial: IAuthorQuoteMap
+  containerHeight?: number
+  withScrollableColumns?: boolean
+}
 
-const Container = styled.div`
-  background-color: #4c9aff;
-  /* min-height: 100vh; */
-  /* like display:flex but will allow bleeding over the window width */
-  /* min-width: 100vw; */
-  display: inline-flex;
-`
-
-const Board = ({ isCombineEnabled = false, initial, containerHeight = '', withScrollableColumns = '' }) => {
+const Board: React.FC<BoardProps> = ({ isCombineEnabled = false, initial, containerHeight, withScrollableColumns }) => {
   const [ordered, setOrdered] = useState(Object.keys(initial))
   const [columns, setColumns] = useState(initial)
 
-  const onDragEnd = (result) => {
+  const onDragEnd = (result: DropResult) => {
     if (result.combine) {
       if (result.type === 'COLUMN') {
         const shallow = [...ordered]
@@ -80,7 +72,10 @@ const Board = ({ isCombineEnabled = false, initial, containerHeight = '', withSc
       ignoreContainerClipping={Boolean(containerHeight)}
       isCombineEnabled={isCombineEnabled}>
       {(provided) => (
-        <Container ref={provided.innerRef} {...provided.droppableProps}>
+        <div
+          className="inline-flex bg-sky-300 rounded-lg p-2 dark:bg-gray-800"
+          ref={provided.innerRef}
+          {...provided.droppableProps}>
           {ordered.map((key, index) => (
             <Column
               key={key}
@@ -92,7 +87,7 @@ const Board = ({ isCombineEnabled = false, initial, containerHeight = '', withSc
             />
           ))}
           {provided.placeholder}
-        </Container>
+        </div>
       )}
     </Droppable>
   )
@@ -100,7 +95,7 @@ const Board = ({ isCombineEnabled = false, initial, containerHeight = '', withSc
   return (
     <React.Fragment>
       <DragDropContext onDragEnd={onDragEnd}>
-        {containerHeight ? <ParentContainer height={containerHeight}>{board}</ParentContainer> : board}
+        {containerHeight ? <div style={{ height: containerHeight }}>{board}</div> : board}
       </DragDropContext>
     </React.Fragment>
   )
