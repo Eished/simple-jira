@@ -6,13 +6,9 @@ Demo: [jira.iknow.fun](https://jira.iknow.fun)
 
 ## Available Scripts
 
-### `yarn start & yarn server`
-
-Use VScode Task `Ctrl + shift + b` click `start & server`
+### `yarn start`
 
 Frontend: `http://localhost:3000`
-
-Json Server Mock Backend: `http://localhost:3003`
 
 Msw Mock Backend: `http://localhost:3000/api`
 
@@ -28,6 +24,8 @@ Builds the app for production to the `build` folder.
 ### `yarn server`
 
 json-server
+
+Json Server Mock Backend: `http://localhost:3003`
 
 https://github.com/typicode/json-server#getting-started
 

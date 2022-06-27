@@ -15,9 +15,15 @@ react-table
 
 ### 启动项目
 
-Windows: `Ctrl + shift + b` 点击 `start & server`
+使用 Json server：
 
-MacOS: `Command + shift + b` 点击 `start & server`
+- Windows: `Ctrl + shift + b` 点击 `start & server`
+
+- MacOS: `Command + shift + b` 点击 `start & server`
+
+使用 msw：
+
+- `yarn start`
 
 ### 什么时候使用 flex 什么时候使用 grid
 
@@ -78,9 +84,9 @@ MacOS: `Command + shift + b` 点击 `start & server`
 
 `npx msw init public`
 
-`.env` 增加 `REACT_APP_API_URL='http://localhost:3005'` 任意端口
+`.env` 增加 `REACT_APP_API_URL=/api`
 
-数据由代码生成，用户需要自己使用注册接口注册
+数据由代码生成，用户需要自己使用注册接口注册账号才能登录
 
 接口：
 

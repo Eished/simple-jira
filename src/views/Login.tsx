@@ -13,24 +13,18 @@ export const Login: React.FC = () => {
 
   const login = () => {
     if (email && password) {
-      authApi.login({ username: email, password }).then((data) => {
-        if (data) {
-          alert(data)
-        } else {
-          window.location.reload()
-        }
-      })
+      authApi
+        .login({ username: email, password })
+        .then(() => window.location.reload())
+        .catch((e) => alert(e))
     }
   }
   const registerUser = () => {
     if (email && password) {
-      authApi.register({ username: email, password }).then((data) => {
-        if (data) {
-          alert(data)
-        } else {
-          window.location.reload()
-        }
-      })
+      authApi
+        .register({ username: email, password })
+        .then(() => window.location.reload())
+        .catch((e) => alert(e))
     }
   }
 

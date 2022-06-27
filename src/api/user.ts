@@ -4,20 +4,20 @@ import { User } from 'type/User'
 const API = new APIClient()
 
 class UserApi {
-  subUrl
-  constructor(subUrl = 'api/users/') {
+  url
+  constructor(url = '/users') {
     API.setAuthorization()
-    this.subUrl = subUrl
+    this.url = url
   }
   getUserById(id: number): Promise<User> {
-    return API.get(this.subUrl + id)
+    return API.get(this.url + id)
   }
   getMe(): User | undefined {
     const localUser = localStorage.getItem('user')
     if (localUser) return JSON.parse(localUser)
   }
   getAllUsers(): Promise<User[]> {
-    return API.get(this.subUrl)
+    return API.get(this.url)
   }
 }
 
