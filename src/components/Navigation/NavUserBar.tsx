@@ -23,8 +23,8 @@ export const NavUserBar: React.FC = () => {
       </Flowbite>
       <Dropdown inline label={<Avatar alt="User settings" img={user.avatar} rounded />}>
         <Dropdown.Header>
-          <span className="block text-sm">{user.firstName + ' ' + user.lastName}</span>
-          <span className="block truncate text-xs mt-2 font-medium text-gray-500">{user.email}</span>
+          <span className="block text-sm">{user.username}</span>
+          <span className="block truncate text-xs mt-2 font-medium text-gray-500">{user.username}</span>
         </Dropdown.Header>
         <Dropdown.Item>Dashboard</Dropdown.Item>
         <Dropdown.Item>Settings</Dropdown.Item>

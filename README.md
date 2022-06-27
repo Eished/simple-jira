@@ -1,16 +1,16 @@
-# Getting Started
+# Simple Jira
+
+Demo: [jira.iknow.fun](https://jira.iknow.fun)
+
+[文档和笔记](./docs/readme.md)
 
 ## Available Scripts
 
-### `yarn start & yarn server`
+### `yarn start`
 
-// See https://go.microsoft.com/fwlink/?LinkId=733558 for the documentation about the tasks.json format
+Frontend: `http://localhost:3000`
 
-Use VScode Task `Ctrl + shift + b` choose `start & server`
-
-Frontend: http://localhost:3000
-
-Mock Backend end: http://localhost:3003
+Msw Mock Backend: `http://localhost:3000/api`
 
 ### `yarn test`
 
@@ -24,6 +24,8 @@ Builds the app for production to the `build` folder.
 ### `yarn server`
 
 json-server
+
+Json Server Mock Backend: `http://localhost:3003`
 
 https://github.com/typicode/json-server#getting-started
 
@@ -62,4 +64,6 @@ https://flowbite.com/
 
 https://flowbite-react.com/
 
-## [jira-dev-tool Configuration](/docs/readme.md)
+## jira-dev-tool Configuration
+
+[jira-dev-tool](/docs/readme.md#jira-dev-tool-mock-后端的配置)

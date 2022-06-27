@@ -2,17 +2,18 @@
 import axios from 'axios'
 import { GenericObject } from 'type/Common'
 
-// const URL = process.env.REACT_APP_API_URL
-const JsonServerURL = process.env.REACT_APP_JSON_SERVER_API
-// if (!JsonServerURL) {
-//   throw new Error('REACT_APP_API_URL url not found in .env file')
-// }
+const URL = process.env.REACT_APP_API_URL
+// const JsonServerURL = process.env.REACT_APP_JSON_SERVER_API
+
+if (!URL) {
+  throw new Error('Api url not found in .env file')
+}
 
 // axios use instance config
 class APIClient {
   private instance
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  constructor(url: string = JsonServerURL!) {
+  constructor(url: string = URL!) {
     this.instance = axios.create({
       baseURL: url,
     })
@@ -71,9 +72,9 @@ class APIClient {
             message = 'Sorry! the data you are looking for could not be found'
             break
           default:
-            message = error.message || error
+            message = error?.response?.data?.message || error.message || error
         }
-        return Promise.reject({ message, response: error.response.data })
+        return Promise.reject(message)
       }
     )
   }

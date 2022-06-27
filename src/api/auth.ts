@@ -1,41 +1,31 @@
 import APIClient from 'api/apiClient'
-import { User } from 'type/User'
 
 const API = new APIClient()
 
 type LoginRes =
   | {
-      user: User
-      accessToken: string
+      user: { id: number; name: string; token: string }
     }
   | string
 
-type LoginParams = { email: string; password: string }
+type LoginParams = { username: string; password: string }
 
 class AuthApi {
   register(params: LoginParams): Promise<void | string> {
-    return API.post('users/', params)
-      .then((data: LoginRes) => {
-        this.setToken(data)
-      })
-      .catch(function (error) {
-        return error.response
-      })
+    return API.post('/register', params).then((data: LoginRes) => {
+      this.setToken(data)
+    })
   }
 
-  login({ email, password }: LoginParams): Promise<void | string> {
-    return API.post('login', { email, password })
-      .then((data: LoginRes) => {
-        this.setToken(data)
-      })
-      .catch(function (error) {
-        return error.response
-      })
+  login(params: LoginParams): Promise<void | string> {
+    return API.post('/login', params).then((data: LoginRes) => {
+      this.setToken(data)
+    })
   }
 
   logout() {
     localStorage.removeItem('token')
-    localStorage.removeItem('localUser')
+    localStorage.removeItem('user')
     window.location.href = window.location.origin
     return Promise.resolve()
   }
@@ -46,8 +36,10 @@ class AuthApi {
 
   private setToken(data: LoginRes) {
     if (typeof data === 'object') {
-      localStorage.setItem('token', data.accessToken)
-      localStorage.setItem('localUser', JSON.stringify(data.user))
+      if (data.user.token) {
+        localStorage.setItem('token', data.user.token)
+        localStorage.setItem('user', JSON.stringify({ ...data.user, username: data.user.name }))
+      }
     } else {
       return data
     }

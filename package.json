@@ -3,13 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
     "axios": "^0.27.2",
     "flowbite": "^1.4.7",
     "flowbite-react": "^0.0.26",
     "react": "^18.1.0",
+    "react-beautiful-dnd": "^13.1.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",
-    "react-table": "^7.8.0"
+    "react-table": "^7.8.0",
+    "styled-components": "^5.3.5"
   },
   "scripts": {
     "start": "node scripts/start.js",
@@ -50,6 +54,7 @@
     "@types/jest": "^27.0.1",
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
+    "@types/react-beautiful-dnd": "^13.1.2",
     "@types/react-dom": "^18.0.0",
     "@types/react-table": "^7.7.12",
     "autoprefixer": "^10.4.7",
