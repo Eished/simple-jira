@@ -42,7 +42,7 @@ export const Login: React.FC = () => {
               <TextInput
                 id="email"
                 className="dark:border-gray-500 dark:bg-gray-600"
-                placeholder="name@company.com"
+                placeholder="Example@jira.com"
                 required={true}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}

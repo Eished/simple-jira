@@ -5,9 +5,10 @@ import React from 'react'
 interface SearchPanelProps {
   setSearchValue: (value: string) => void
   searchValue: string
+  placeholder?: string
 }
 
-export const SearchPanel: React.FC<SearchPanelProps> = ({ setSearchValue, searchValue }) => {
+export const SearchPanel: React.FC<SearchPanelProps> = ({ setSearchValue, searchValue, placeholder }) => {
   return (
     <div className="flex items-center space-x-2">
       <div className="w-96">
@@ -16,6 +17,7 @@ export const SearchPanel: React.FC<SearchPanelProps> = ({ setSearchValue, search
           type="text"
           sizing="md"
           value={searchValue}
+          placeholder={placeholder}
           onChange={(e) => setSearchValue(e.target.value)}
         />
       </div>

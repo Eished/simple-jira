@@ -20,7 +20,7 @@ export const Dashboad: React.FC = () => {
       <div>
         <p className="text-6xl text-sky-400">Dashboad</p>
       </div>
-      <SearchPanel searchValue={searchValue} setSearchValue={setSearchValue} />
+      <SearchPanel placeholder="useDebounce test" searchValue={searchValue} setSearchValue={setSearchValue} />
       <Board initial={authorQuoteMap} />
     </div>
   )
