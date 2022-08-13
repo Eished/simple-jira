@@ -21,7 +21,9 @@
     "test": "node scripts/test.js",
     "prepare": "husky install",
     "server": "json-server --watch ./__json_server_mock__/db.json --port 3003 -m ./node_modules/json-server-auth",
-    "seed": "ts-node ./__json_server_mock__/seed.ts "
+    "seed": "ts-node ./__json_server_mock__/seed.ts ",
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "lint:fix": "yarn lint --fix"
   },
   "browserslist": {
     "production": [

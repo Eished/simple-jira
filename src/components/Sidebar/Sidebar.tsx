@@ -2,7 +2,7 @@ import { Badge, Sidebar } from 'flowbite-react'
 
 export const SideBar = () => {
   return (
-    <div className="w-fit bg-gray-50 shadow-md bg-slate-300">
+    <div className="w-fit bg-gray-50 shadow-md">
       <hr className="dark:border-gray-700" />
       <Sidebar>
         <Sidebar.Items>
@@ -45,8 +45,8 @@ export const SideBar = () => {
             your profile.
           </p>
           <a
-            className="text-sm text-blue-900 underline hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
-            href="#">
+            href="#"
+            className="text-sm text-blue-900 underline hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
             Turn new navigation off
           </a>
         </Sidebar.CTA>
