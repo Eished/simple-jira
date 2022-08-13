@@ -1,21 +1,9 @@
-import AuthApi from 'api/auth'
-import UserApi from 'api/user'
+import { useAuth } from 'context/AuthContext'
 import { Avatar, Button, DarkThemeToggle, Dropdown, Flowbite, Navbar } from 'flowbite-react'
-import React, { useEffect, useState } from 'react'
-import { User } from 'type/User'
+import { FC } from 'react'
 
-export const NavUserBar: React.FC = () => {
-  const authApi = new AuthApi()
-  const [user, setUser] = useState<User | undefined>(undefined)
-
-  useEffect(() => {
-    setUser(new UserApi().getMe())
-  }, [])
-
-  const logout = () => {
-    authApi.logout()
-  }
-
+export const NavUserBar: FC = () => {
+  const { user, logout } = useAuth()
   return user ? (
     <div className="flex md:order-2 z-50 space-x-2">
       <Flowbite>
@@ -30,7 +18,7 @@ export const NavUserBar: React.FC = () => {
         <Dropdown.Item>Settings</Dropdown.Item>
         <Dropdown.Item>Earnings</Dropdown.Item>
         <Dropdown.Divider />
-        <Dropdown.Item onClick={logout}>Sign out</Dropdown.Item>
+        <Dropdown.Item onClick={() => logout()}>Sign out</Dropdown.Item>
       </Dropdown>
       <Navbar.Toggle />
     </div>

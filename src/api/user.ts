@@ -12,10 +12,6 @@ class UserApi {
   getUserById(id: number): Promise<User> {
     return API.get(this.url + id)
   }
-  getMe(): User | undefined {
-    const localUser = localStorage.getItem('user')
-    if (localUser) return JSON.parse(localUser)
-  }
   getAllUsers(): Promise<User[]> {
     return API.get(this.url)
   }

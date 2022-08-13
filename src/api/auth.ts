@@ -1,32 +1,33 @@
 import APIClient from 'api/apiClient'
 
 const API = new APIClient()
+export interface User {
+  username: string
+  avatar?: string
+}
 
-type LoginRes =
-  | {
-      user: { id: number; name: string; token: string }
-    }
-  | string
+type LoginRes = {
+  user: {
+    id: number
+    name: string
+    token: string
+  }
+}
 
 type LoginParams = { username: string; password: string }
 
 class AuthApi {
-  register(params: LoginParams): Promise<void | string> {
-    return API.post('/register', params).then((data: LoginRes) => {
-      this.setToken(data)
-    })
+  register(params: LoginParams): Promise<User> {
+    return API.post('/register', params).then((data: LoginRes) => this.setToken(data))
   }
 
-  login(params: LoginParams): Promise<void | string> {
-    return API.post('/login', params).then((data: LoginRes) => {
-      this.setToken(data)
-    })
+  login(params: LoginParams): Promise<User> {
+    return API.post('/login', params).then((data: LoginRes) => this.setToken(data))
   }
 
   logout() {
     localStorage.removeItem('token')
     localStorage.removeItem('user')
-    window.location.href = window.location.origin
     return Promise.resolve()
   }
 
@@ -34,15 +35,20 @@ class AuthApi {
     return !!localStorage.getItem('token')
   }
 
-  private setToken(data: LoginRes) {
-    if (typeof data === 'object') {
-      if (data.user.token) {
-        localStorage.setItem('token', data.user.token)
-        localStorage.setItem('user', JSON.stringify({ ...data.user, username: data.user.name }))
-      }
+  getMe(): User | null {
+    const localUser = localStorage.getItem('user')
+    if (localUser) {
+      return JSON.parse(localUser)
     } else {
-      return data
+      return null
     }
+  }
+
+  private setToken(data: LoginRes) {
+    const user = { ...data.user, username: data.user.name }
+    localStorage.setItem('token', data.user.token)
+    localStorage.setItem('user', JSON.stringify(user))
+    return user
   }
 }
 
