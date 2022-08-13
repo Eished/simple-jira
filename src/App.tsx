@@ -1,27 +1,13 @@
-import { FlowFooter } from 'components/Footer/FlowFooter'
-import { FlowNavBar } from 'components/Navigation/FlowNavBar'
-import { NavRoutes } from 'components/Navigation/NavRoutes'
 import { useAuth } from 'context/AuthContext'
 import { FC } from 'react'
-import { Login } from 'views/Login'
+import { Layout } from 'views/Layout'
+import { LoginView } from 'views/LoginView'
 
 const App: FC = () => {
   console.log('App render...')
-  const { user, login, register } = useAuth()
+  const { user } = useAuth()
 
-  return (
-    <div className="flex flex-col justify-center dark:bg-gray-900">
-      {user ? (
-        <>
-          <FlowNavBar />
-          <NavRoutes />
-          <FlowFooter />
-        </>
-      ) : (
-        <Login login={login} register={register} />
-      )}
-    </div>
-  )
+  return <>{user ? <Layout /> : <LoginView />}</>
 }
 
 export default App
