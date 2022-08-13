@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Table } from 'flowbite-react'
-import React, { useMemo } from 'react'
+import { FC, useMemo } from 'react'
 import { useGlobalFilter, usePagination, useSortBy, useTable } from 'react-table'
 import { GenericObject } from 'type/Common'
 
@@ -17,7 +17,7 @@ interface RowProps {
   value: string
 }
 
-export const ReactTableCard: React.FC<ReactTableCardProps> = ({
+export const ReactTableCard: FC<ReactTableCardProps> = ({
   title,
   data,
   searchBar = true,

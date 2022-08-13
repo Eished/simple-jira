@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import styled from '@emotion/styled'
+import { FC } from 'react'
 import { Draggable, Droppable, DroppableProvided } from 'react-beautiful-dnd'
 import { grid } from '../constants'
 import { IQuote } from '../data'
@@ -104,7 +105,7 @@ interface QuoteListProps {
   title?: string
 }
 
-const QuoteList: React.FC<QuoteListProps> = ({
+const QuoteList: FC<QuoteListProps> = ({
   ignoreContainerClipping,
   internalScroll,
   scrollContainerStyle,

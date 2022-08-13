@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
 import { DragDropContext, Droppable, DropResult } from 'react-beautiful-dnd'
 import Column from './column'
 import { IAuthorQuoteMap } from './data'
@@ -11,7 +11,7 @@ interface BoardProps {
   withScrollableColumns?: boolean
 }
 
-const Board: React.FC<BoardProps> = ({ isCombineEnabled = false, initial, containerHeight, withScrollableColumns }) => {
+const Board: FC<BoardProps> = ({ isCombineEnabled = false, initial, containerHeight, withScrollableColumns }) => {
   const [ordered, setOrdered] = useState(Object.keys(initial))
   const [columns, setColumns] = useState(initial)
 

@@ -1,4 +1,5 @@
 import { Navbar } from 'flowbite-react'
+import { FC } from 'react'
 import { useLinkClickHandler, useLocation } from 'react-router-dom'
 
 interface NavLinkProps {
@@ -7,7 +8,7 @@ interface NavLinkProps {
 }
 
 // (property) NavLinkProps.to: string 'to' is missing in props validation
-export const NavLink: React.FC<NavLinkProps> = ({ to, text }: NavLinkProps) => {
+export const NavLink: FC<NavLinkProps> = ({ to, text }: NavLinkProps) => {
   const location = useLocation()
   const clickHandler = useLinkClickHandler(to)
 

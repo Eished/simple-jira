@@ -1,10 +1,10 @@
 import UserApi from 'api/user'
 import { ReactTableCard } from 'components/Table/ReactTableCard'
 import { useMount } from 'lib/customHooks'
-import React, { useState } from 'react'
+import { FC, useState } from 'react'
 import { User } from 'type/User'
 
-export const Users: React.FC = () => {
+export const Users: FC = () => {
   const userApi = new UserApi()
 
   const [users, setUsers] = useState<User[]>([])

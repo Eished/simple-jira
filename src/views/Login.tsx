@@ -1,32 +1,15 @@
-import AuthApi from 'api/auth'
+import { IAuthContext } from 'context/AuthContext'
 import { Button, Checkbox, Label, Modal, TextInput } from 'flowbite-react'
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
 
-export const Login: React.FC = () => {
+type LoginProps = Pick<IAuthContext, 'login' | 'register'>
+
+export const Login: FC<LoginProps> = ({ login, register }) => {
   const [show, setShow] = useState(true)
   const [remember, setRemember] = useState(false)
-  const [register, setRegister] = useState(false)
+  const [isRegister, setIsRegister] = useState(false)
   const [email, setEmail] = useState<string>('Marilyne.Waters@simplejira.com')
   const [password, setPassword] = useState<string>('nEiEQtUZ7DgL09m')
-
-  const authApi = new AuthApi()
-
-  const login = () => {
-    if (email && password) {
-      authApi
-        .login({ username: email, password })
-        .then(() => window.location.reload())
-        .catch((e) => alert(e))
-    }
-  }
-  const registerUser = () => {
-    if (email && password) {
-      authApi
-        .register({ username: email, password })
-        .then(() => window.location.reload())
-        .catch((e) => alert(e))
-    }
-  }
 
   return (
     <React.Fragment>
@@ -42,7 +25,7 @@ export const Login: React.FC = () => {
               <TextInput
                 id="email"
                 className="dark:border-gray-500 dark:bg-gray-600"
-                placeholder="name@company.com"
+                placeholder="Example@jira.com"
                 required={true}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -62,17 +45,17 @@ export const Login: React.FC = () => {
               />
             </div>
 
-            {register ? (
+            {isRegister ? (
               <>
                 <div className="w-full">
-                  <Button onClick={registerUser}>Register a new user</Button>
+                  <Button onClick={() => register({ email, password })}>Register a new user</Button>
                 </div>
                 <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
                   <a
                     href="/"
                     onClick={(e) => {
                       e.preventDefault()
-                      setRegister(false)
+                      setIsRegister(false)
                     }}
                     className="text-blue-700 hover:underline dark:text-blue-500">
                     Back to Login
@@ -91,7 +74,7 @@ export const Login: React.FC = () => {
                   </a>
                 </div>
                 <div className="w-full">
-                  <Button onClick={login}>Log in to your account</Button>
+                  <Button onClick={() => login({ email, password })}>Log in to your account</Button>
                 </div>
                 <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
                   Not registered?{' '}
@@ -99,7 +82,7 @@ export const Login: React.FC = () => {
                     href="/"
                     onClick={(e) => {
                       e.preventDefault()
-                      setRegister(true)
+                      setIsRegister(true)
                     }}
                     className="text-blue-700 hover:underline dark:text-blue-500">
                     Create account

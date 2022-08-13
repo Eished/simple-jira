@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import styled from '@emotion/styled'
+import { FC } from 'react'
 import { DraggableProvided } from 'react-beautiful-dnd'
 import { borderRadius, grid } from '../constants'
 import { IQuote } from '../data'
@@ -134,7 +135,7 @@ interface QuoteItemProps {
   provided: DraggableProvided
 }
 
-const QuoteItem: React.FC<QuoteItemProps> = ({ quote, isDragging, isGroupedOver, provided }) => {
+const QuoteItem: FC<QuoteItemProps> = ({ quote, isDragging, isGroupedOver, provided }) => {
   return (
     <Container
       href={quote.author.url}

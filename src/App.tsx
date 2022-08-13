@@ -1,24 +1,24 @@
-import AuthApi from 'api/auth'
 import { FlowFooter } from 'components/Footer/FlowFooter'
 import { FlowNavBar } from 'components/Navigation/FlowNavBar'
 import { NavRoutes } from 'components/Navigation/NavRoutes'
-import React from 'react'
+import { useAuth } from 'context/AuthContext'
+import { FC } from 'react'
 import { Login } from 'views/Login'
 
-const App: React.FC = () => {
+const App: FC = () => {
   console.log('App render...')
-  const isLogin = new AuthApi().isLogin()
+  const { user, login, register } = useAuth()
 
   return (
     <div className="flex flex-col justify-center dark:bg-gray-900">
-      {isLogin ? (
+      {user ? (
         <>
           <FlowNavBar />
           <NavRoutes />
           <FlowFooter />
         </>
       ) : (
-        <Login />
+        <Login login={login} register={register} />
       )}
     </div>
   )

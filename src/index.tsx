@@ -1,3 +1,4 @@
+import { AuthProvider } from 'context/AuthContext'
 import { loadDevTools } from 'jira-dev-tool'
 import ReactDOM from 'react-dom/client'
 import { HashRouter } from 'react-router-dom'
@@ -8,9 +9,11 @@ import reportWebVitals from './reportWebVitals'
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 loadDevTools(() => {
   root.render(
-    <HashRouter>
-      <App />
-    </HashRouter>
+    <AuthProvider>
+      <HashRouter>
+        <App />
+      </HashRouter>
+    </AuthProvider>
   )
 })
 
