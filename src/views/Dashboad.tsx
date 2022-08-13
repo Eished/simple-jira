@@ -17,9 +17,6 @@ export const Dashboad: FC = () => {
 
   return (
     <div className="flex flex-col items-center m-5 space-y-4">
-      <div>
-        <p className="text-6xl text-sky-400">Dashboad</p>
-      </div>
       <SearchPanel placeholder="useDebounce test" searchValue={searchValue} setSearchValue={setSearchValue} />
       <Board initial={authorQuoteMap} />
     </div>

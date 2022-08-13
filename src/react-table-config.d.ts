@@ -1,3 +1,4 @@
+/* eslint-disable */
 import 'react-table'
 
 declare module 'react-table' {
