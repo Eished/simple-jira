@@ -1,6 +1,6 @@
 import { Button } from 'flowbite-react'
-import React from 'react'
+import { FC } from 'react'
 
-export const FlowButton: React.FC = () => {
+export const FlowButton: FC = () => {
   return <Button color="gray">Button</Button>
 }

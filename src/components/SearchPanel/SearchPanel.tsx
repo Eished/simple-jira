@@ -1,6 +1,6 @@
 import { FlowSelect } from 'components/Select/FlowSelect'
 import { Button, TextInput } from 'flowbite-react'
-import React from 'react'
+import { FC } from 'react'
 
 interface SearchPanelProps {
   setSearchValue: (value: string) => void
@@ -8,7 +8,7 @@ interface SearchPanelProps {
   placeholder?: string
 }
 
-export const SearchPanel: React.FC<SearchPanelProps> = ({ setSearchValue, searchValue, placeholder }) => {
+export const SearchPanel: FC<SearchPanelProps> = ({ setSearchValue, searchValue, placeholder }) => {
   return (
     <div className="flex items-center space-x-2">
       <div className="w-96">

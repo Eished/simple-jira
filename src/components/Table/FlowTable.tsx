@@ -1,12 +1,12 @@
 import { Table } from 'flowbite-react'
-import React from 'react'
+import { FC } from 'react'
 
 interface FlowTableProps {
   striped?: boolean
   hoverable?: boolean
 }
 
-export const FlowTable: React.FC<FlowTableProps> = ({ striped = true, hoverable = true }) => {
+export const FlowTable: FC<FlowTableProps> = ({ striped = true, hoverable = true }) => {
   return (
     <Table striped={striped} hoverable={hoverable}>
       <Table.Head>

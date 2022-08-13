@@ -1,9 +1,9 @@
 import { ReactTableCard } from 'components/Table/ReactTableCard'
 import { Button } from 'flowbite-react'
 import { useArray } from 'lib/customHooks'
-import React from 'react'
+import { FC } from 'react'
 
-export const Projects: React.FC = () => {
+export const Projects: FC = () => {
   const data = [
     { name: 'mike', title: 'hello', total: 999, edit: 'Edit' },
     { name: 'mike', title: 'hello', total: 999, edit: 'Edit' },

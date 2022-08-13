@@ -1,11 +1,11 @@
 import { Logo } from 'components/Logo/Logo'
 import { Navbar } from 'flowbite-react'
-import React from 'react'
+import React, { FC } from 'react'
 import { Link } from 'react-router-dom'
 import { NavLink } from './NavLink'
 import { NavUserBar } from './NavUserBar'
 
-export const FlowNavBar: React.FC = () => {
+export const FlowNavBar: FC = () => {
   return (
     <div className="w-full shadow flex justify-center dark:bg-gray-800">
       <div className="w-4/5">

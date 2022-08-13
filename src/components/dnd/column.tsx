@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { FC } from 'react'
 import { Draggable } from 'react-beautiful-dnd'
 import { borderRadius, grid } from './constants'
 import { IQuote } from './data'
@@ -32,7 +33,7 @@ interface IColumn {
   isCombineEnabled?: boolean
 }
 
-const Column: React.FC<IColumn> = ({ title, quotes, index, isScrollable, isCombineEnabled }) => {
+const Column: FC<IColumn> = ({ title, quotes, index, isScrollable, isCombineEnabled }) => {
   return (
     <Draggable draggableId={title} index={index}>
       {(provided, snapshot) => (

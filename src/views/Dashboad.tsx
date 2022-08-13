@@ -2,9 +2,9 @@ import Board from 'components/dnd/board'
 import { authorQuoteMap } from 'components/dnd/data'
 import { SearchPanel } from 'components/SearchPanel/SearchPanel'
 import { useDebounce } from 'lib/customHooks'
-import React, { useEffect, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 
-export const Dashboad: React.FC = () => {
+export const Dashboad: FC = () => {
   console.log('Home render...')
   const [searchValue, setSearchValue] = useState<string>('')
 

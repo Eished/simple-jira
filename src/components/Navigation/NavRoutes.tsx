@@ -1,10 +1,11 @@
+import { FC } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { About } from 'views/About'
 import { Dashboad } from 'views/Dashboad'
 import { Projects } from 'views/Projects'
 import { Users } from 'views/Users'
 
-export const NavRoutes: React.FC = () => {
+export const NavRoutes: FC = () => {
   return (
     <Routes>
       <Route path="/" element={<Dashboad />} />

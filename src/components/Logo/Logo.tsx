@@ -1,7 +1,7 @@
 import { ReactComponent as ReactLogo } from 'assets/Icons/logo.svg'
-import React from 'react'
+import { FC } from 'react'
 
-export const Logo: React.FC = () => {
+export const Logo: FC = () => {
   return (
     <>
       <div className="animate-[translatex_10s_ease-in-out_infinite] z-10">

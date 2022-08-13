@@ -1,8 +1,8 @@
 import { Logo } from 'components/Logo/Logo'
 import { Footer } from 'flowbite-react'
-import React from 'react'
+import React, { FC } from 'react'
 
-export const FlowFooter: React.FC = () => {
+export const FlowFooter: FC = () => {
   return (
     <Footer className="flex flex-col">
       <React.Fragment key=".0">
