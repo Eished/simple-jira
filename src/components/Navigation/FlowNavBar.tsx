@@ -12,7 +12,7 @@ export const FlowNavBar: FC = () => {
         <Navbar>
           <React.Fragment key=".0">
             <Link to="/" className="flex">
-              <Logo />
+              <Logo title="Simple Jira" />
             </Link>
             <NavUserBar />
             <Navbar.Collapse>

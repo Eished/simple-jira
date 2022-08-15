@@ -1,5 +1,6 @@
 import UserApi from 'api/user'
 import { ReactTableCard } from 'components/Table/ReactTableCard'
+import { Spinner } from 'flowbite-react'
 import { useMount } from 'lib/customHooks'
 import { FC, useState } from 'react'
 import { User } from 'type/User'
@@ -14,7 +15,11 @@ export const Users: FC = () => {
 
   return (
     <div className="flex flex-col m-5 items-center space-y-6">
-      {users.length ? <ReactTableCard searchBar={true} data={users} striped={false} /> : ''}
+      {users.length ? (
+        <ReactTableCard searchBar={true} data={users} striped={false} />
+      ) : (
+        <Spinner aria-label="Loading spinner" size="xl" />
+      )}
     </div>
   )
 }
