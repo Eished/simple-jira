@@ -4,18 +4,18 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        'spin-5': 'spin 10s ease-in-out infinite',
-        'translate-x-10': 'translatex 10s ease-in-out infinite',
+        wiggle: 'wiggle 20s ease-in-out infinite',
+        'translate-x-10': 'translatex 20s ease-in-out infinite',
       },
       keyframes: {
-        spin: {
+        wiggle: {
           '0%': { transform: 'rotate(0deg)' },
-          '50%': { transform: 'rotate(360deg)' },
+          '50%': { transform: 'rotate(648deg)' },
           '100%': { transform: 'rotate(-0deg)' },
         },
         translatex: {
           '0%': { transform: 'translate(0px)' },
-          '50%': { transform: 'translate(200%)' },
+          '50%': { transform: 'translate(360%)' },
           '100%': { transform: 'translate(0px)' },
         },
       },
